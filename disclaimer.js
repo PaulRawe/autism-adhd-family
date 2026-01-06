@@ -26,15 +26,25 @@
     }
     
     function shouldShowMedicalDisclaimer(path) {
+        // Check if we're on the homepage
+        const pathParts = path.split('/').filter(p => p.length > 0);
+        const lastPart = pathParts[pathParts.length - 1] || '';
+        
+        // Homepage detection: 
+        // - Empty path or just one folder name (GitHub Pages project folder)
+        // - Ends with index.html
+        // - Ends with just a slash
+        const isHomepage = pathParts.length <= 1 || 
+                          lastPart === 'index.html' ||
+                          path.endsWith('/') && pathParts.length <= 2;
+        
         // Show on index, parents, hobbies, daily, school, social pages
-        return path.includes('index.html') || 
+        return isHomepage ||
                path.includes('/parents/') || 
                path.includes('/hobbies/') ||
                path.includes('/daily/') ||
                path.includes('/school/') ||
-               path.includes('/social/') ||
-               path === '/' ||
-               path === '';
+               path.includes('/social/');
     }
     
     function shouldShowGeneralDisclaimer(path) {
