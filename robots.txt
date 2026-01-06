@@ -1,0 +1,39 @@
+# robots.txt for Autism & ADHD Family Website
+
+User-agent: *
+Allow: /
+
+# Exclude pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.pdf$ # PDFs only through shop
+
+# Exclude legal pages from indexing
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /cookies.html
+Disallow: /disclaimer.html
+
+# Sitemap
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Special bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Crawl delay for polite bots
+User-agent: *
+Crawl-delay: 1
