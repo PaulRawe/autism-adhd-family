@@ -219,7 +219,7 @@
         const button = document.createElement('a');
         button.id = 'floating-download-btn';
         button.href = 'download.html';
-        button.innerHTML = '📚 Hilfsmaterialien & Downloads';
+        button.innerHTML = '📚 Resources & Downloads';
         
         // Add styles
         button.style.cssText = `
