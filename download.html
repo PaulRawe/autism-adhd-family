@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hilfsmaterialien & Downloads für Autismus & ADHD | Paul & Katharina</title>
+
+    <!-- Enhanced SEO -->
+    <meta name="description" content="Praxiserprobte Hilfsmaterialien von Katharina (Lehrerin) für autistische Kinder und Kinder mit ADHD. Sofort einsetzbar in Schule und Alltag.">
+    <meta name="keywords" content="Autismus Hilfsmaterialien, ADHD Schulmaterial, Visualisierungen Autismus, Unterrichtsmaterial ADHD, Strukturhilfen Autismus">
+    
+    <!-- Cookie Consent CSS -->
+    <link rel="stylesheet" href="consent.css">
+
+    <style>
+        /* AUTISM-FRIENDLY DESIGN */
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-hover: #e6f1f6;
+            --color-accent: #d97706;
+            --color-success: #059669;
+            --color-trust: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 1rem auto 0;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-trust);
+        }
+
+        .trust-section h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #f0f9ff;
+            border-radius: 8px;
+            border: 2px solid #bae6fd;
+        }
+
+        .trust-badge strong {
+            color: var(--color-primary);
+        }
+
+        /* Product Grid */
+        .products-intro {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .products-intro h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .products-intro p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(47, 111, 143, 0.15);
+            border-color: var(--color-secondary);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            color: var(--color-primary);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-category {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .product-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .product-benefits {
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0;
+        }
+
+        .product-benefits li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .product-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .product-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-accent) 0%, #f59e0b 100%);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+        }
+
+        .product-cta:focus {
+            outline: 3px solid var(--color-secondary);
+        }
+
+        /* Why Section */
+        .why-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid #bae6fd;
+        }
+
+        .why-section h2 {
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .why-item h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--color-trust);
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-section h2 {
+            color: var(--color-success);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📚 Hilfsmaterialien & Downloads</h1>
+    <p>Praxiserprobte Materialien für Autismus & ADHD im Schulalltag</p>
+    <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+</header>
+
+<main>
+
+<!-- Trust Section -->
+<section class="trust-section">
+    <h2>Von Praktikern für Praktiker</h2>
+    <p>
+        Alle Materialien wurden von <strong>Katharina</strong>, einer erfahrenen Lehrerin mit 
+        jahrelanger Praxis in der Arbeit mit autistischen Kindern und Kindern mit ADHD, entwickelt 
+        und im echten Schulalltag erprobt. Keine Theorie – sondern bewährte Praxis, die funktioniert.
+    </p>
+    
+    <div class="trust-badges">
+        <div class="trust-badge">
+            <span>👩‍🏫</span>
+            <strong>Von Lehrerin entwickelt</strong>
+        </div>
+        <div class="trust-badge">
+            <span>✓</span>
+            <strong>Im Alltag bewährt</strong>
+        </div>
+        <div class="trust-badge">
+            <span>🎯</span>
+            <strong>Sofort einsetzbar</strong>
+        </div>
+        <div class="trust-badge">
+            <span>🏠</span>
+            <strong>Für Schule & Zuhause</strong>
+        </div>
+    </div>
+</section>
+
+<!-- Products Intro -->
+<section class="products-intro">
+    <h2>Unsere Hilfsmaterialien</h2>
+    <p>
+        Strukturhilfen, Visualisierungen und praktische Tools, die autistischen Kindern und 
+        Kindern mit ADHD helfen, den Alltag besser zu bewältigen. Alle Materialien sind 
+        zum direkten Download und sofortigen Einsatz bereit.
+    </p>
+</section>
+
+<!-- Products Grid -->
+<div class="products-grid">
+    <!-- Product Template - Ready for your products -->
+    <!-- Example structure (remove after adding real products):
+    
+    <div class="product-card">
+        <img src="skalenusa.png" alt="Produktname" class="product-image">
+        <div class="product-content">
+            <span class="product-category">Kategorie: Schule / Zuhause / Visualisierung</span>
+            <h3 class="product-title">Produktname</h3>
+            <p class="product-description">
+                Kurze, klare Beschreibung des Materials und wofür es eingesetzt wird.
+            </p>
+            <ul class="product-benefits">
+                <li>Vorteil 1: Sofort einsetzbar</li>
+                <li>Vorteil 2: Klar strukturiert</li>
+                <li>Vorteil 3: Bewährt im Alltag</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">€X,XX</span>
+                <a href="https://gumroad.com/your-link" class="product-cta" target="_blank">
+                    Jetzt herunterladen
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    -->
+</div>
+
+<!-- Why Section -->
+<section class="why-section">
+    <h2>Warum unsere Materialien?</h2>
+    <div class="why-grid">
+        <div class="why-item">
+            <h3>🎯 Praxiserprobt</h3>
+            <p>Jedes Material wurde im echten Schulalltag mit autistischen Kindern getestet und optimiert.</p>
+        </div>
+        <div class="why-item">
+            <h3>📐 Klar strukturiert</h3>
+            <p>Autism-friendly Design: Klare Strukturen, reduzierte Reize, visuelle Klarheit.</p>
+        </div>
+        <div class="why-item">
+            <h3>⚡ Sofort einsetzbar</h3>
+            <p>Nach dem Download direkt verwendbar – keine lange Vorbereitung nötig.</p>
+        </div>
+        <div class="why-item">
+            <h3>👩‍🏫 Von Lehrerin erstellt</h3>
+            <p>Entwickelt von Katharina mit jahrelanger Erfahrung in Inklusion und Förderung.</p>
+        </div>
+        <div class="why-item">
+            <h3>🏠 Für Schule & Zuhause</h3>
+            <p>Flexibel einsetzbar – in der Schule, beim Lernen zu Hause und im Familienalltag.</p>
+        </div>
+        <div class="why-item">
+            <h3>💚 Aus Elternsicht</h3>
+            <p>Wir leben selbst mit Autismus und ADHD – wir verstehen die Herausforderungen.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Guarantee Section -->
+<section class="guarantee-section">
+    <h2>✓ Unsere Qualitätsgarantie</h2>
+    <p>
+        Alle Materialien sind sorgfältig entwickelt und getestet. Sollte etwas nicht deinen 
+        Erwartungen entsprechen, melde dich einfach bei uns. Wir finden eine Lösung.
+    </p>
+</section>
+
+<!-- Contact Section -->
+<section class="trust-section">
+    <h2>Fragen? Kontaktiere uns!</h2>
+    <p style="text-align: center; margin-top: 1rem;">
+        Du hast Fragen zu den Materialien oder benötigst Unterstützung?<br>
+        <strong>Schreib uns:</strong> <a href="mailto:rawe.p@freenet.de" style="color: var(--color-accent); text-decoration: underline;">rawe.p@freenet.de</a>
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Autism & ADHD – Real Parenting Experience</p>
+    <div class="legal">
+        <a href="privacy.html">Datenschutz</a> | 
+        <a href="terms.html">Nutzungsbedingungen</a> | 
+        <a href="cookies.html">Cookie-Einstellungen</a> | 
+        <a href="about-us.html">Über uns</a> |
+        <a href="transparency.html">Transparenz & Werbung</a> | 
+        <a href="disclaimer.html">Haftungsausschluss</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;color:#ccc;">
+        Diese Website wird aus Deutschland betrieben und erfüllt die EU-Datenschutzbestimmungen (DSGVO).
+    </p>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+    <div class="banner-content">
+        <p>
+            Wir verwenden Cookies, um die Nutzung unserer Website zu analysieren und zu verbessern. 
+            <a href="cookies.html">Mehr erfahren</a>
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Alle akzeptieren</button>
+            <button class="btn-decline" onclick="declineCookies()">Nur essenzielle</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Einstellungen</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie-Einstellungen</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Essenzielle Cookies</h3>
+                <p>Diese Cookies sind für die grundlegende Funktionalität der Website erforderlich.</p>
+                <div class="cookie-toggle">
+                    <label>Essenziell</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analyse-Cookies</h3>
+                <p>
+                    Diese Cookies helfen uns, die Nutzung der Website zu verstehen 
+                    (GoatCounter – datenschutzfreundlich).
+                </p>
+                <div class="cookie-toggle">
+                    <label>Analyse</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing-Cookies</h3>
+                <p>Diese Cookies können in Zukunft für Werbezwecke verwendet werden.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Abbrechen</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Speichern</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Consent Script -->
+<script src="cookies.js" defer></script>
+
+</body>
+</html>
