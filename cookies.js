@@ -4,6 +4,7 @@
 
     const COOKIE_CONSENT_KEY = 'cookieConsent';
     const COOKIE_SETTINGS_KEY = 'cookieSettings';
+    const COOKIE_EXPIRY_DAYS = 365;
     
     // Default settings
     const defaultSettings = {
@@ -12,14 +13,97 @@
         marketing: false      // Future marketing cookies
     };
 
+    // Check if localStorage is available
+    function isLocalStorageAvailable() {
+        try {
+            const test = '__localStorage_test__';
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    // Fallback to cookies if localStorage is not available
+    const useLocalStorage = isLocalStorageAvailable();
+
+    // Cookie helper functions
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/;SameSite=Lax';
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + '=';
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) {
+                return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            }
+        }
+        return null;
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;SameSite=Lax';
+    }
+
+    // Storage abstraction layer
+    function getItem(key) {
+        if (useLocalStorage) {
+            try {
+                return localStorage.getItem(key);
+            } catch (e) {
+                console.warn('localStorage read failed, falling back to cookie:', e);
+                return getCookie(key);
+            }
+        } else {
+            return getCookie(key);
+        }
+    }
+
+    function setItem(key, value) {
+        if (useLocalStorage) {
+            try {
+                localStorage.setItem(key, value);
+                // Also set as cookie as backup
+                setCookie(key, value, COOKIE_EXPIRY_DAYS);
+            } catch (e) {
+                console.warn('localStorage write failed, using cookie:', e);
+                setCookie(key, value, COOKIE_EXPIRY_DAYS);
+            }
+        } else {
+            setCookie(key, value, COOKIE_EXPIRY_DAYS);
+        }
+    }
+
+    function removeItem(key) {
+        if (useLocalStorage) {
+            try {
+                localStorage.removeItem(key);
+            } catch (e) {
+                console.warn('localStorage delete failed:', e);
+            }
+        }
+        deleteCookie(key);
+    }
+
     // Initialize cookie banner
     function initCookieBanner() {
         const consent = getConsent();
         
+        console.log('Cookie consent status:', consent); // Debug log
+        
         // Only show banner if no consent has been given yet
-        if (consent === null) {
+        if (!consent) {
+            console.log('No consent found, showing banner'); // Debug log
             showBanner();
         } else {
+            console.log('Consent found, loading settings'); // Debug log
             // Load analytics if accepted
             const settings = getSettings();
             if (settings.analytics) {
@@ -33,19 +117,21 @@
 
     // Get consent status
     function getConsent() {
-        try {
-            return localStorage.getItem(COOKIE_CONSENT_KEY);
-        } catch (e) {
-            console.error('localStorage access failed:', e);
-            return null;
-        }
+        const consent = getItem(COOKIE_CONSENT_KEY);
+        console.log('Retrieved consent:', consent); // Debug log
+        return consent;
     }
 
     // Get cookie settings
     function getSettings() {
         try {
-            const saved = localStorage.getItem(COOKIE_SETTINGS_KEY);
-            return saved ? JSON.parse(saved) : defaultSettings;
+            const saved = getItem(COOKIE_SETTINGS_KEY);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                console.log('Retrieved settings:', parsed); // Debug log
+                return parsed;
+            }
+            return defaultSettings;
         } catch (e) {
             console.error('Failed to load settings:', e);
             return defaultSettings;
@@ -55,7 +141,9 @@
     // Save cookie settings
     function saveSettings(settings) {
         try {
-            localStorage.setItem(COOKIE_SETTINGS_KEY, JSON.stringify(settings));
+            const settingsJson = JSON.stringify(settings);
+            setItem(COOKIE_SETTINGS_KEY, settingsJson);
+            console.log('Saved settings:', settingsJson); // Debug log
         } catch (e) {
             console.error('Failed to save settings:', e);
         }
@@ -66,6 +154,9 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'block';
+            console.log('Banner shown'); // Debug log
+        } else {
+            console.warn('Cookie banner element not found'); // Debug log
         }
     }
 
@@ -74,11 +165,14 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'none';
+            console.log('Banner hidden'); // Debug log
         }
     }
 
     // Accept all cookies
     window.acceptCookies = function() {
+        console.log('Accept all cookies clicked'); // Debug log
+        
         const settings = {
             necessary: true,
             analytics: true,
@@ -86,10 +180,14 @@
         };
         
         try {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+            setItem(COOKIE_CONSENT_KEY, 'accepted');
             saveSettings(settings);
             hideBanner();
             loadAnalytics();
+            
+            // Verify it was saved
+            console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
+            console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
         } catch (e) {
             console.error('Failed to accept cookies:', e);
         }
@@ -97,6 +195,8 @@
 
     // Essential cookies only
     window.declineCookies = function() {
+        console.log('Decline cookies clicked'); // Debug log
+        
         const settings = {
             necessary: true,
             analytics: false,
@@ -104,9 +204,13 @@
         };
         
         try {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'declined');
+            setItem(COOKIE_CONSENT_KEY, 'declined');
             saveSettings(settings);
             hideBanner();
+            
+            // Verify it was saved
+            console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
+            console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
         } catch (e) {
             console.error('Failed to decline cookies:', e);
         }
@@ -142,6 +246,8 @@
 
     // Save settings
     window.saveCookieSettings = function() {
+        console.log('Save custom settings clicked'); // Debug log
+        
         const analyticsToggle = document.getElementById('cookie-analytics');
         const marketingToggle = document.getElementById('cookie-marketing');
         
@@ -154,7 +260,7 @@
         saveSettings(settings);
         
         try {
-            localStorage.setItem(COOKIE_CONSENT_KEY, 'custom');
+            setItem(COOKIE_CONSENT_KEY, 'custom');
         } catch (e) {
             console.error('Failed to save consent:', e);
         }
@@ -168,6 +274,10 @@
         } else {
             removeAnalytics();
         }
+        
+        // Verify it was saved
+        console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
+        console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
     };
 
     // Load GoatCounter Analytics
@@ -175,11 +285,13 @@
         const settings = getSettings();
         
         if (!settings.analytics) {
+            console.log('Analytics disabled in settings'); // Debug log
             return;
         }
         
         // Check if GoatCounter is already loaded
         if (window.goatcounter || document.querySelector('script[data-goatcounter]')) {
+            console.log('GoatCounter already loaded'); // Debug log
             return;
         }
         
@@ -288,13 +400,29 @@
 
     // Reset consent (for development/testing)
     window.resetCookieConsent = function() {
+        console.log('Resetting cookie consent'); // Debug log
         try {
-            localStorage.removeItem(COOKIE_CONSENT_KEY);
-            localStorage.removeItem(COOKIE_SETTINGS_KEY);
+            removeItem(COOKIE_CONSENT_KEY);
+            removeItem(COOKIE_SETTINGS_KEY);
+            console.log('Consent reset, reloading page');
             location.reload();
         } catch (e) {
             console.error('Failed to reset consent:', e);
         }
+    };
+
+    // Debug function to check current state
+    window.debugCookieConsent = function() {
+        console.log('=== Cookie Consent Debug Info ===');
+        console.log('localStorage available:', useLocalStorage);
+        console.log('Consent status:', getItem(COOKIE_CONSENT_KEY));
+        console.log('Settings:', getItem(COOKIE_SETTINGS_KEY));
+        console.log('All cookies:', document.cookie);
+        if (useLocalStorage) {
+            console.log('localStorage consent:', localStorage.getItem(COOKIE_CONSENT_KEY));
+            console.log('localStorage settings:', localStorage.getItem(COOKIE_SETTINGS_KEY));
+        }
+        console.log('================================');
     };
 
     // Initialize on page load
@@ -304,12 +432,15 @@
         initCookieBanner();
     }
 
+    console.log('Cookie consent script initialized');
+    console.log('Using localStorage:', useLocalStorage);
+
 })();
 
 // Helper function: Manual event tracking with GoatCounter
 window.trackEvent = function(eventName, eventData = {}) {
     try {
-        const settings = JSON.parse(localStorage.getItem('cookieSettings') || '{}');
+        const settings = JSON.parse(getItem('cookieSettings') || '{}');
         
         if (!settings.analytics || !window.goatcounter) {
             console.log('Analytics disabled or not loaded');
@@ -325,3 +456,25 @@ window.trackEvent = function(eventName, eventData = {}) {
         console.error('Event tracking failed:', e);
     }
 };
+
+// Make getItem available globally for trackEvent
+function getItem(key) {
+    try {
+        if (typeof localStorage !== 'undefined') {
+            return localStorage.getItem(key);
+        }
+    } catch (e) {
+        // Fallback to cookie
+    }
+    
+    const nameEQ = key + '=';
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
+    }
+    return null;
+}
