@@ -30,55 +30,85 @@
 
     // Cookie helper functions
     function setCookie(name, value, days) {
-        const expires = new Date();
-        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/;SameSite=Lax';
+        try {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+            const cookieString = name + '=' + encodeURIComponent(value) + ';expires=' + expires.toUTCString() + ';path=/;SameSite=Lax';
+            document.cookie = cookieString;
+            console.log('Cookie set:', name, '=', value);
+            console.log('Cookie string:', cookieString);
+            return true;
+        } catch (e) {
+            console.error('Failed to set cookie:', e);
+            return false;
+        }
     }
 
     function getCookie(name) {
-        const nameEQ = name + '=';
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) {
-                return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        try {
+            const nameEQ = name + '=';
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) {
+                    const value = decodeURIComponent(c.substring(nameEQ.length, c.length));
+                    console.log('Cookie retrieved:', name, '=', value);
+                    return value;
+                }
             }
+            console.log('Cookie not found:', name);
+            return null;
+        } catch (e) {
+            console.error('Failed to get cookie:', e);
+            return null;
         }
-        return null;
     }
 
     function deleteCookie(name) {
         document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/;SameSite=Lax';
     }
 
-    // Storage abstraction layer
+    // Storage abstraction layer - Uses cookies as primary method
     function getItem(key) {
+        // Always try cookie first
+        const cookieValue = getCookie(key);
+        if (cookieValue) {
+            return cookieValue;
+        }
+        
+        // Fallback to localStorage if available
         if (useLocalStorage) {
             try {
-                return localStorage.getItem(key);
+                const lsValue = localStorage.getItem(key);
+                if (lsValue) {
+                    console.log('Found in localStorage, migrating to cookie:', key);
+                    setCookie(key, lsValue, COOKIE_EXPIRY_DAYS);
+                    return lsValue;
+                }
             } catch (e) {
-                console.warn('localStorage read failed, falling back to cookie:', e);
-                return getCookie(key);
+                console.warn('localStorage read failed:', e);
             }
-        } else {
-            return getCookie(key);
         }
+        
+        return null;
     }
 
     function setItem(key, value) {
+        // Always set cookie first (primary storage)
+        const cookieSet = setCookie(key, value, COOKIE_EXPIRY_DAYS);
+        
+        // Also try localStorage as backup
         if (useLocalStorage) {
             try {
                 localStorage.setItem(key, value);
-                // Also set as cookie as backup
-                setCookie(key, value, COOKIE_EXPIRY_DAYS);
+                console.log('Also stored in localStorage:', key);
             } catch (e) {
-                console.warn('localStorage write failed, using cookie:', e);
-                setCookie(key, value, COOKIE_EXPIRY_DAYS);
+                console.warn('localStorage write failed (not critical):', e);
             }
-        } else {
-            setCookie(key, value, COOKIE_EXPIRY_DAYS);
         }
+        
+        return cookieSet;
     }
 
     function removeItem(key) {
@@ -94,34 +124,48 @@
 
     // Initialize cookie banner
     function initCookieBanner() {
+        console.log('=== Initializing Cookie Banner ===');
+        console.log('Current URL:', window.location.href);
+        console.log('All cookies:', document.cookie);
+        
         const consent = getConsent();
+        console.log('Consent status retrieved:', consent, '(type:', typeof consent, ')');
         
-        console.log('Cookie consent status:', consent); // Debug log
+        const settings = getSettings();
+        console.log('Current settings:', settings);
         
-        // Only show banner if no consent has been given yet
-        // Valid consent values: 'accepted', 'declined', 'custom'
-        if (!consent || (consent !== 'accepted' && consent !== 'declined' && consent !== 'custom')) {
-            console.log('No valid consent found, showing banner'); // Debug log
+        // Valid consent values
+        const validConsent = ['accepted', 'declined', 'custom'];
+        const hasValidConsent = consent && validConsent.includes(consent);
+        
+        console.log('Has valid consent:', hasValidConsent);
+        
+        if (!hasValidConsent) {
+            console.log('>>> Showing banner (no valid consent found)');
             showBanner();
         } else {
-            console.log('Valid consent found:', consent); // Debug log
+            console.log('>>> Not showing banner (valid consent exists:', consent, ')');
             // Load analytics if accepted
-            const settings = getSettings();
             if (settings.analytics) {
+                console.log('Loading analytics (user accepted)');
                 loadAnalytics();
             }
         }
         
         // Initialize floating download button
         initFloatingButton();
+        
+        console.log('=== Cookie Banner Initialization Complete ===');
     }
 
     // Get consent status
     function getConsent() {
         const consent = getItem(COOKIE_CONSENT_KEY);
-        console.log('Retrieved consent:', consent); // Debug log
-        // Return null if consent is empty string or undefined
-        return consent || null;
+        // Ensure we return null for empty/undefined values
+        if (!consent || consent === 'null' || consent === 'undefined') {
+            return null;
+        }
+        return consent;
     }
 
     // Get cookie settings
@@ -144,10 +188,13 @@
     function saveSettings(settings) {
         try {
             const settingsJson = JSON.stringify(settings);
-            setItem(COOKIE_SETTINGS_KEY, settingsJson);
-            console.log('Saved settings:', settingsJson); // Debug log
+            const saved = setItem(COOKIE_SETTINGS_KEY, settingsJson);
+            console.log('Settings save result:', saved);
+            console.log('Settings JSON:', settingsJson);
+            return saved;
         } catch (e) {
             console.error('Failed to save settings:', e);
+            return false;
         }
     }
 
@@ -173,7 +220,7 @@
 
     // Accept all cookies
     window.acceptCookies = function() {
-        console.log('Accept all cookies clicked'); // Debug log
+        console.log('=== ACCEPT COOKIES CLICKED ===');
         
         const settings = {
             necessary: true,
@@ -182,22 +229,44 @@
         };
         
         try {
-            setItem(COOKIE_CONSENT_KEY, 'accepted');
+            // Save consent
+            const consentSaved = setItem(COOKIE_CONSENT_KEY, 'accepted');
+            console.log('Consent save result:', consentSaved);
+            
+            // Save settings
             saveSettings(settings);
+            
+            // Hide banner immediately
             hideBanner();
+            
+            // Load analytics
             loadAnalytics();
             
-            // Verify it was saved
-            console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
-            console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
+            // Verify immediately
+            setTimeout(function() {
+                const verifyConsent = getItem(COOKIE_CONSENT_KEY);
+                const verifySettings = getItem(COOKIE_SETTINGS_KEY);
+                console.log('=== VERIFICATION ===');
+                console.log('Consent saved as:', verifyConsent);
+                console.log('Settings saved as:', verifySettings);
+                console.log('All cookies now:', document.cookie);
+                console.log('===================');
+                
+                if (verifyConsent !== 'accepted') {
+                    console.error('ERROR: Consent not properly saved!');
+                    alert('Cookie consent could not be saved. Please check your browser settings.');
+                }
+            }, 100);
+            
         } catch (e) {
             console.error('Failed to accept cookies:', e);
+            alert('An error occurred while saving your cookie preferences.');
         }
     };
 
     // Essential cookies only
     window.declineCookies = function() {
-        console.log('Decline cookies clicked'); // Debug log
+        console.log('=== DECLINE COOKIES CLICKED ===');
         
         const settings = {
             necessary: true,
@@ -206,15 +275,35 @@
         };
         
         try {
-            setItem(COOKIE_CONSENT_KEY, 'declined');
+            // Save consent
+            const consentSaved = setItem(COOKIE_CONSENT_KEY, 'declined');
+            console.log('Consent save result:', consentSaved);
+            
+            // Save settings
             saveSettings(settings);
+            
+            // Hide banner immediately
             hideBanner();
             
-            // Verify it was saved
-            console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
-            console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
+            // Verify immediately
+            setTimeout(function() {
+                const verifyConsent = getItem(COOKIE_CONSENT_KEY);
+                const verifySettings = getItem(COOKIE_SETTINGS_KEY);
+                console.log('=== VERIFICATION ===');
+                console.log('Consent saved as:', verifyConsent);
+                console.log('Settings saved as:', verifySettings);
+                console.log('All cookies now:', document.cookie);
+                console.log('===================');
+                
+                if (verifyConsent !== 'declined') {
+                    console.error('ERROR: Consent not properly saved!');
+                    alert('Cookie consent could not be saved. Please check your browser settings.');
+                }
+            }, 100);
+            
         } catch (e) {
             console.error('Failed to decline cookies:', e);
+            alert('An error occurred while saving your cookie preferences.');
         }
     };
 
@@ -248,7 +337,7 @@
 
     // Save settings
     window.saveCookieSettings = function() {
-        console.log('Save custom settings clicked'); // Debug log
+        console.log('=== SAVE CUSTOM SETTINGS CLICKED ===');
         
         const analyticsToggle = document.getElementById('cookie-analytics');
         const marketingToggle = document.getElementById('cookie-marketing');
@@ -259,27 +348,49 @@
             marketing: marketingToggle ? marketingToggle.checked : false
         };
         
-        saveSettings(settings);
+        console.log('Custom settings:', settings);
         
         try {
-            setItem(COOKIE_CONSENT_KEY, 'custom');
+            // Save settings
+            saveSettings(settings);
+            
+            // Save consent
+            const consentSaved = setItem(COOKIE_CONSENT_KEY, 'custom');
+            console.log('Consent save result:', consentSaved);
+            
+            // Close modal
+            closeCookieSettings();
+            
+            // Hide banner
+            hideBanner();
+            
+            // Enable/disable analytics
+            if (settings.analytics) {
+                loadAnalytics();
+            } else {
+                removeAnalytics();
+            }
+            
+            // Verify immediately
+            setTimeout(function() {
+                const verifyConsent = getItem(COOKIE_CONSENT_KEY);
+                const verifySettings = getItem(COOKIE_SETTINGS_KEY);
+                console.log('=== VERIFICATION ===');
+                console.log('Consent saved as:', verifyConsent);
+                console.log('Settings saved as:', verifySettings);
+                console.log('All cookies now:', document.cookie);
+                console.log('===================');
+                
+                if (verifyConsent !== 'custom') {
+                    console.error('ERROR: Consent not properly saved!');
+                    alert('Cookie consent could not be saved. Please check your browser settings.');
+                }
+            }, 100);
+            
         } catch (e) {
-            console.error('Failed to save consent:', e);
+            console.error('Failed to save custom settings:', e);
+            alert('An error occurred while saving your cookie preferences.');
         }
-        
-        closeCookieSettings();
-        hideBanner();
-        
-        // Enable/disable analytics
-        if (settings.analytics) {
-            loadAnalytics();
-        } else {
-            removeAnalytics();
-        }
-        
-        // Verify it was saved
-        console.log('Verify save - Consent:', getItem(COOKIE_CONSENT_KEY));
-        console.log('Verify save - Settings:', getItem(COOKIE_SETTINGS_KEY));
     };
 
     // Load GoatCounter Analytics
