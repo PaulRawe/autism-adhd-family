@@ -99,11 +99,12 @@
         console.log('Cookie consent status:', consent); // Debug log
         
         // Only show banner if no consent has been given yet
-        if (!consent) {
-            console.log('No consent found, showing banner'); // Debug log
+        // Valid consent values: 'accepted', 'declined', 'custom'
+        if (!consent || (consent !== 'accepted' && consent !== 'declined' && consent !== 'custom')) {
+            console.log('No valid consent found, showing banner'); // Debug log
             showBanner();
         } else {
-            console.log('Consent found, loading settings'); // Debug log
+            console.log('Valid consent found:', consent); // Debug log
             // Load analytics if accepted
             const settings = getSettings();
             if (settings.analytics) {
@@ -119,7 +120,8 @@
     function getConsent() {
         const consent = getItem(COOKIE_CONSENT_KEY);
         console.log('Retrieved consent:', consent); // Debug log
-        return consent;
+        // Return null if consent is empty string or undefined
+        return consent || null;
     }
 
     // Get cookie settings
