@@ -1,5 +1,6 @@
 /* Cookie Consent Banner Styling */
 #cookie-banner {
+    display: none; /* Initially hidden - JavaScript will show if needed */
     position: fixed;
     bottom: 0;
     left: 0;
