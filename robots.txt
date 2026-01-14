@@ -1,39 +1,33 @@
-# robots.txt for Autism & ADHD Family Website
+# robots.txt für autismfamilyguide.com
+# Letzte Aktualisierung: Januar 2025
 
+# Alle Bots erlauben
 User-agent: *
 Allow: /
 
-# Exclude pages
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /*.pdf$ # PDFs only through shop
+# Sitemap angeben
+Sitemap: http://autismfamilyguide.com/sitemap.xml
 
-# Exclude legal pages from indexing
-Disallow: /privacy.html
-Disallow: /terms.html
-Disallow: /cookies.html
-Disallow: /disclaimer.html
+# Optional: Crawl-Verzögerung für höfliche Bots
+# User-agent: *
+# Crawl-delay: 1
 
-# Sitemap
-Sitemap: https://your-domain.com/sitemap.xml
+# Bestimmte Verzeichnisse ausschließen (falls vorhanden)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
 
-# Special bots
-User-agent: GPTBot
-Disallow: /
+# Spezifische Dateien ausschließen (falls nötig)
+# Disallow: /*.pdf$
+# Disallow: /downloads/
 
-User-agent: ChatGPT-User
-Disallow: /
+# Google-spezifische Einstellungen
+User-agent: Googlebot
+Allow: /
 
-User-agent: CCBot
-Disallow: /
+User-agent: Googlebot-Image
+Allow: /
 
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-# Crawl delay for polite bots
-User-agent: *
-Crawl-delay: 1
+# Bing-spezifisch
+User-agent: Bingbot
+Allow: /
