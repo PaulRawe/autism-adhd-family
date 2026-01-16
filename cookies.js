@@ -591,3 +591,4 @@ function getItem(key) {
     }
     return null;
 }
+document.querySelectorAll('.ad-container').forEach(el => el.style.display = 'none');
