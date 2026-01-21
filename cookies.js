@@ -443,7 +443,7 @@
         // Create floating button
         const button = document.createElement('a');
         button.id = 'floating-download-btn';
-        button.href = 'download.html';
+       button.href = '/download.html';
         button.innerHTML = '📚 Resources & Downloads';
         
         // Add styles
