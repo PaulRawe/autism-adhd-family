@@ -501,7 +501,7 @@
     <h3>📂 Browse by Category</h3>
     <div class="filter-buttons">
         <button class="filter-btn active" data-category="all">
-            All Products <span class="count">4</span>
+            All Products <span class="count">5</span>
         </button>
         <button class="filter-btn" data-category="structure">
             Daily Structure <span class="count">1</span>
@@ -510,7 +510,7 @@
             Communication <span class="count">1</span>
         </button>
         <button class="filter-btn" data-category="school">
-            School Support <span class="count">1</span>
+            School Support <span class="count">2</span>
         </button>
         <button class="filter-btn" data-category="bundle">
             Bundles <span class="count">1</span>
@@ -520,7 +520,7 @@
 
 <!-- Results Info -->
 <div class="results-info">
-    <p id="results-text">Showing all 4 products</p>
+    <p id="results-text">Showing all 5 products</p>
 </div>
 
 <!-- Products Grid -->
@@ -558,7 +558,40 @@
         </div>
     </div>
 
-    <!-- PRODUCT 2: Complete Bundle -->
+    <!-- PRODUCT 2: ADHD Homework Emergency Plan -->
+    <div class="product-card" data-categories="school">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="adhscoverengl.png" alt="ADHD Homework Emergency Plan" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">⚡ School Support · ADHD · Executive Function</span>
+            <h3 class="product-title">ADHD Homework Emergency Plan</h3>
+            <p class="product-description">
+                End the daily homework battles tonight. This 30-page research-backed guide gives you 
+                proven strategies for when your ADHD child is melting down, shutting down, or can't 
+                get started – from neuroscience and real classroom experience by teacher Katharina.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>30 pages</strong> of evidence-based content</li>
+                <li><strong>Crisis Protocol:</strong> Emergency interventions that work NOW</li>
+                <li><strong>ADHD Brain Science:</strong> Why homework is neurologically harder</li>
+                <li><strong>De-escalation Techniques:</strong> Stop meltdowns in their tracks</li>
+                <li><strong>Prevention Strategies:</strong> Environment, routines, motivation systems</li>
+                <li><strong>Practical Tools:</strong> Chunking, timers, body doubling</li>
+                <li><strong>Scientific References:</strong> Dr. Russell Barkley & leading researchers</li>
+                <li>Compassionate, shame-free approach that works WITH the ADHD brain</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$9.99</span>
+                <a href="https://paulrawe.gumroad.com/l/zadjnf" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3: Complete Bundle -->
     <div class="product-card" data-categories="bundle structure communication">
         <div class="product-image-wrapper">
             <span class="product-badge bundle">BEST VALUE</span>
@@ -590,7 +623,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 3: Visual Daily Structure Card System -->
+    <!-- PRODUCT 4: Visual Daily Structure Card System -->
     <div class="product-card" data-categories="structure">
         <div class="product-image-wrapper">
             <img src="coverengl.png" alt="Visual Daily Structure Card System" class="product-image">
@@ -621,7 +654,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 4: Autism Visual Communication Scales Bundle -->
+    <!-- PRODUCT 5: Autism Visual Communication Scales Bundle -->
     <div class="product-card" data-categories="communication school">
         <div class="product-image-wrapper">
             <img src="skalenusa.jpg" alt="Autism Visual Communication Scales Bundle" class="product-image">
@@ -699,7 +732,7 @@
     <h2>Questions? Contact Us!</h2>
     <p style="text-align: center; margin-top: 1rem;">
         Have questions about the materials or need support?<br>
-        <strong>Email us:</strong> <a href="mailto:rawe.p@freenet.de" style="color: var(--color-accent); text-decoration: underline;">rawe.p@freenet.de</a>
+        <strong>Email us:</strong> <a href="/cdn-cgi/l/email-protection#70021107155e0030160215151e15045e1415" style="color: var(--color-accent); text-decoration: underline;"><span class="__cf_email__" data-cfemail="8af8ebfdefa4facaecf8efefe4effea4eeef">[email&#160;protected]</span></a>
     </p>
 </section>
 
@@ -789,7 +822,7 @@
 </div>
 
 <!-- Category Filter Script -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
@@ -825,15 +858,4 @@ document.addEventListener('DOMContentLoaded', function() {
             if (category === 'all') {
                 resultsText.textContent = `Showing all ${visibleCount} products`;
             } else {
-                resultsText.textContent = `Showing ${visibleCount} product${visibleCount !== 1 ? 's' : ''} in ${this.textContent.split('(')[0].trim()}`;
-            }
-        });
-    });
-});
-</script>
-
-<!-- Cookie Consent Script -->
-<script src="cookies.js" defer></script>
-
-</body>
-</html>
+                resultsText.textContent = `Showing $
