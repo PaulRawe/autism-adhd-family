@@ -383,32 +383,43 @@ class DailyHelpFinder {
         return `
             <div class="product-card">
                 <div class="product-rank">#${rank} Recommended</div>
-                <div class="product-header">
-                    <h4>${product.name}</h4>
-                    ${product.is_bundle ? '<span class="bundle-badge">BUNDLE</span>' : ''}
-                </div>
-                <p class="product-description">${product.description}</p>
                 
-                <div class="product-helps">
-                    <strong>This helps with:</strong>
-                    <ul>
-                        ${product.helps_with.map(help => `<li>${help}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="product-footer">
-                    <div class="product-price">
-                        ${product.savings ? `
-                            <span class="price-original">$${product.original_price}</span>
-                            <span class="price-current">$${product.price}</span>
-                            <span class="price-savings">Save $${product.savings}</span>
-                        ` : `
-                            <span class="price-current">$${product.price}</span>
-                        `}
+                ${product.image ? `
+                    <div class="product-image-wrapper">
+                        ${product.is_bundle ? '<div class="bundle-badge-overlay">BUNDLE DEAL</div>' : ''}
+                        <img src="../${product.image}" alt="${product.name}" class="product-image" onerror="this.style.display='none'">
                     </div>
-                    <a href="${product.url}" class="btn btn-primary" target="_blank" rel="noopener">
-                        Get This →
-                    </a>
+                ` : ''}
+                
+                <div class="product-content">
+                    <div class="product-header">
+                        <h4>${product.name}</h4>
+                    </div>
+                    <p class="product-description">${product.description}</p>
+                    
+                    <div class="product-helps">
+                        <strong>✓ This helps with:</strong>
+                        <ul>
+                            ${product.helps_with.map(help => `<li>${help}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div class="product-footer">
+                        <div class="product-price">
+                            ${product.savings ? `
+                                <div class="price-wrapper">
+                                    <span class="price-current">$${product.price}</span>
+                                    <span class="price-original">$${product.original_price}</span>
+                                </div>
+                                <div class="price-savings">Save $${product.savings}!</div>
+                            ` : `
+                                <span class="price-current">$${product.price}</span>
+                            `}
+                        </div>
+                        <a href="${product.url}" class="btn btn-primary" target="_blank" rel="noopener">
+                            Get This Now →
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
