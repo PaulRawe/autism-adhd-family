@@ -9,123 +9,377 @@
     
     <link rel="stylesheet" href="../consent.css">
     
-    <style>
-        /* Standard Website Styles */
-        :root {
-            --bg-main: #f4f6f8;
-            --bg-card: #ffffff;
-            --color-primary: #2f6f8f;
-            --color-secondary: #5fa8c9;
-            --color-text: #2b2b2b;
-            --color-muted: #6b6b6b;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, Verdana, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--color-text);
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--color-primary);
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        
+   <style>
+    /* Standard Website Styles */
+    :root {
+        --bg-main: #f4f6f8;
+        --bg-card: #ffffff;
+        --color-primary: #2f6f8f;
+        --color-secondary: #5fa8c9;
+        --color-text: #2b2b2b;
+        --color-muted: #6b6b6b;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, Verdana, sans-serif;
+        background-color: var(--bg-main);
+        color: var(--color-text);
+        line-height: 1.7;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Header Styles */
+    header {
+        background-color: var(--color-primary);
+        color: #ffffff;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Navigation Styles */
+    nav {
+        background-color: #e9edf1;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: var(--color-primary);
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+    
+    nav a:focus {
+        outline: 3px solid var(--color-secondary);
+    }
+    
+    /* Content Container */
+    .content-container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    
+    /* Social Story Specific Styles */
+    @page { size: A4; margin: 20mm; }
+    
+    .page-break { 
+        page-break-after: always;
+        margin-bottom: 2rem;
+    }
+    
+    .title-page { 
+        text-align: center; 
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #87CEEB30 0%, #87CEEB10 100%); 
+        border-radius: 20px;
+        margin-bottom: 2rem;
+    }
+    
+    h1.story-title { 
+        font-size: clamp(24pt, 5vw, 36pt);
+        color: #87CEEB; 
+        margin: 20px 0 10px; 
+        font-weight: bold;
+    }
+    
+    h2 { 
+        font-size: clamp(18pt, 4vw, 24pt);
+        color: #87CEEB; 
+        margin: 40px 0 20px; 
+        padding-bottom: 10px; 
+        border-bottom: 3px solid #87CEEB; 
+        page-break-after: avoid;
+        word-wrap: break-word;
+    }
+    
+    h3 { 
+        font-size: clamp(14pt, 3vw, 18pt);
+        color: #87CEEB; 
+        margin: 30px 0 15px;
+    }
+    
+    p { 
+        margin: 1em 0; 
+        text-align: left;
+        font-size: clamp(12pt, 2.5vw, 14pt);
+    }
+    
+    .info-box, .warning-box, .success-box { 
+        padding: 15px;
+        margin: 20px 0; 
+        border-radius: 5px;
+        word-wrap: break-word;
+    }
+    
+    .info-box { 
+        background: #E8F4FF; 
+        border-left: 5px solid #87CEEB;
+    }
+    
+    .warning-box { 
+        background: #FFF4E6; 
+        border-left: 5px solid #F9A03F;
+    }
+    
+    .success-box { 
+        background: #E8F8F0; 
+        border-left: 5px solid #52C1A6;
+    }
+    
+    .step-list { 
+        counter-reset: step-counter; 
+        list-style: none; 
+        padding-left: 0;
+    }
+    
+    .step-list li { 
+        counter-increment: step-counter; 
+        margin: 20px 0; 
+        padding-left: 50px;
+        position: relative; 
+        min-height: 40px;
+        word-wrap: break-word;
+    }
+    
+    .step-list li::before { 
+        content: counter(step-counter); 
+        position: absolute; 
+        left: 0; 
+        top: 0; 
+        background: #87CEEB; 
+        color: white; 
+        width: 35px;
+        height: 35px;
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    
+    .checklist { 
+        list-style: none; 
+        padding-left: 0;
+    }
+    
+    .checklist li { 
+        padding: 10px 0 10px 35px;
+        position: relative; 
+        border-bottom: 1px solid #EEEEEE;
+        word-wrap: break-word;
+    }
+    
+    .checklist li::before { 
+        content: "☐"; 
+        position: absolute; 
+        left: 0; 
+        font-size: 18pt;
+        color: #87CEEB;
+    }
+    
+    .fillable-field { 
+        border-bottom: 2px solid #87CEEB; 
+        min-width: 150px;
+        display: inline-block; 
+        padding: 5px; 
+        margin: 5px 5px;
+    }
+    
+    .notes-section { 
+        background: #FFFEF7; 
+        border: 2px dashed #F9A03F; 
+        padding: 20px;
+        margin: 30px 0; 
+        border-radius: 10px;
+    }
+    
+    .footer { 
+        text-align: center; 
+        margin-top: 50px; 
+        padding-top: 20px; 
+        border-top: 2px solid #DDDDDD; 
+        color: #666; 
+        font-size: 12pt;
+    }
+    
+    /* Image responsive sizing */
+    img { 
+        max-width: 100%;
+        height: auto;
+        display: block; 
+        margin: 20px auto;
+    }
+    
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Mobile Optimizations */
+    @media screen and (max-width: 768px) {
         header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
         
         header p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
+            font-size: 1rem;
         }
         
-        /* Navigation Styles */
         nav {
-            background-color: #e9edf1;
-            padding: 1rem;
+            padding: 0.75rem;
         }
         
         nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            list-style: none;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
+            gap: 0.5rem;
         }
         
         nav a {
-            text-decoration: none;
-            color: var(--color-primary);
-            font-weight: bold;
+            font-size: 0.8rem;
+            padding: 0.25rem;
         }
         
-        nav a:focus {
-            outline: 3px solid var(--color-secondary);
-        }
-        
-        /* Content Container */
         .content-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 1rem auto;
+            padding: 0 0.75rem;
         }
         
-        /* Print Styles */
-        @media print {
-            header, nav {
-                display: none !important;
-            }
-            
-            body {
-                background: white;
-                max-width: 210mm;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            
-            .page-break {
-                page-break-after: always;
-            }
+        .title-page {
+            padding: 30px 15px;
+            min-height: auto;
         }
         
-        /* Social Story Specific Styles */
-        @page { size: A4; margin: 20mm; }
+        .page-break {
+            margin-bottom: 1rem;
+        }
         
-        .page-break { page-break-after: always; }
-        .title-page { text-align: center; padding: 80px 20px; min-height: 250mm; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #87CEEB30 0%, #87CEEB10 100%); border-radius: 20px; }
-        h1.story-title { font-size: 36pt; color: #87CEEB; margin: 30px 0 10px; font-weight: bold; }
-        h2 { font-size: 24pt; color: #87CEEB; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 3px solid #87CEEB; page-break-after: avoid; }
-        h3 { font-size: 18pt; color: #87CEEB; margin: 30px 0 15px; }
-        p { margin: 1em 0; text-align: left; }
-        .info-box { background: #E8F4FF; border-left: 5px solid #87CEEB; padding: 20px; margin: 20px 0; border-radius: 5px; }
-        .warning-box { background: #FFF4E6; border-left: 5px solid #F9A03F; padding: 20px; margin: 20px 0; border-radius: 5px; }
-        .success-box { background: #E8F8F0; border-left: 5px solid #52C1A6; padding: 20px; margin: 20px 0; border-radius: 5px; }
-        .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
-        .step-list li { counter-increment: step-counter; margin: 20px 0; padding-left: 60px; position: relative; min-height: 40px; }
-        .step-list li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: #87CEEB; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: bold; }
-        .checklist { list-style: none; padding-left: 0; }
-        .checklist li { padding: 10px 0 10px 40px; position: relative; border-bottom: 1px solid #EEEEEE; }
-        .checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 20pt; color: #87CEEB; }
-        .fillable-field { border-bottom: 2px solid #87CEEB; min-width: 200px; display: inline-block; padding: 5px; margin: 0 10px; }
-        .notes-section { background: #FFFEF7; border: 2px dashed #F9A03F; padding: 30px; margin: 30px 0; border-radius: 10px; }
-        .footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 2px solid #DDDDDD; color: #666; font-size: 12pt; }
-        img { max-width: 120mm; max-height: 120mm; width: auto; height: auto; display: block; margin: 0 auto; }
-    </style>
+        h1.story-title {
+            font-size: 24pt;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            margin: 25px 0 15px;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            font-size: 12pt;
+        }
+        
+        .step-list li {
+            padding-left: 45px;
+        }
+        
+        .step-list li::before {
+            width: 32px;
+            height: 32px;
+            font-size: 14pt;
+        }
+        
+        .info-box, .warning-box, .success-box {
+            padding: 12px;
+        }
+        
+        .notes-section {
+            padding: 15px;
+        }
+        
+        .fillable-field {
+            min-width: 100px;
+            width: 100%;
+            display: block;
+            margin: 10px 0;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        header h1 {
+            font-size: 1.25rem;
+        }
+        
+        nav a {
+            font-size: 0.75rem;
+        }
+        
+        h1.story-title {
+            font-size: 20pt;
+        }
+        
+        h2 {
+            font-size: 16pt;
+        }
+        
+        h3 {
+            font-size: 13pt;
+        }
+        
+        p {
+            font-size: 11pt;
+        }
+    }
+    
+    /* Print Styles */
+    @media print {
+        header, nav {
+            display: none !important;
+        }
+        
+        body {
+            background: white;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        .title-page {
+            min-height: 250mm;
+        }
+        
+        img {
+            max-width: 120mm;
+            max-height: 120mm;
+        }
+    }
+</style>
 </head>
 <body>
 
