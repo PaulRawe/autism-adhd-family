@@ -1,0 +1,207 @@
+{
+  "products": [
+    {
+      "id": "homework_bundle",
+      "name": "Complete Homework Emergency Bundle",
+      "short_name": "Homework Bundle",
+      "price": 15.99,
+      "original_price": 19.98,
+      "savings": 4.00,
+      "description": "Both homework emergency plans together – complete coverage for autism AND ADHD. Perfect for co-occurring conditions or teachers supporting diverse classrooms.",
+      "image": "homework-bundle-cover.jpg",
+      "url": "https://paulrawe.gumroad.com/l/pmmxd",
+      "tags": ["homework", "school", "autism", "adhd"],
+      "helps_with": [
+        "Daily homework battles with autism or ADHD",
+        "Understanding why homework is so hard",
+        "Crisis intervention when things explode",
+        "Long-term prevention strategies"
+      ],
+      "priority_score": {
+        "homework": 10,
+        "school": 10,
+        "autism": 8,
+        "adhd": 8
+      },
+      "is_bundle": true,
+      "recommended_when_both": ["homework", "school"]
+    },
+    {
+      "id": "autism_homework",
+      "name": "Autism Homework Emergency Plan",
+      "short_name": "Autism Homework Plan",
+      "price": 9.99,
+      "description": "43-page evidence-based guide with concrete strategies for autism homework challenges. 3-phase system, sensory solutions, meltdown prevention.",
+      "image": "homework-cover.jpg",
+      "url": "https://paulrawe.gumroad.com/l/vwfbi",
+      "tags": ["homework", "school", "autism"],
+      "helps_with": [
+        "Homework meltdowns and shutdowns",
+        "Sensory overload during homework",
+        "Executive function challenges",
+        "Visual structure and predictability needs"
+      ],
+      "priority_score": {
+        "homework": 10,
+        "school": 8,
+        "autism": 10,
+        "adhd": 0
+      }
+    },
+    {
+      "id": "adhd_homework",
+      "name": "ADHD Homework Emergency Plan",
+      "short_name": "ADHD Homework Plan",
+      "price": 9.99,
+      "description": "30-page research-backed guide for ADHD homework struggles. Crisis protocols, executive function support, motivation systems.",
+      "image": "adhd-homework-cover.jpg",
+      "url": "https://paulrawe.gumroad.com/l/zadjnf",
+      "tags": ["homework", "school", "adhd"],
+      "helps_with": [
+        "Can't start, can't focus, can't finish",
+        "Task initiation and persistence",
+        "Time blindness and executive dysfunction",
+        "Emotional dysregulation during homework"
+      ],
+      "priority_score": {
+        "homework": 10,
+        "school": 8,
+        "adhd": 10,
+        "autism": 0
+      }
+    },
+    {
+      "id": "support_bundle",
+      "name": "Complete Autism Support System Bundle",
+      "short_name": "Support Bundle",
+      "price": 39.99,
+      "original_price": 53.99,
+      "savings": 14.00,
+      "description": "Daily structure cards + Communication scales together. Proactive structure meets reactive communication tools.",
+      "image": "bundleengl.png",
+      "url": "https://paulrawe.gumroad.com/l/vptozg",
+      "tags": ["structure", "communication", "autism", "daily_life"],
+      "helps_with": [
+        "Complete daily life management system",
+        "Maximum orientation and self-awareness",
+        "Routine struggles and communication challenges",
+        "Best value for comprehensive support"
+      ],
+      "priority_score": {
+        "structure": 10,
+        "communication": 10,
+        "autism": 10,
+        "daily_life": 8
+      },
+      "is_bundle": true,
+      "recommended_when_both": ["structure", "communication"]
+    },
+    {
+      "id": "structure_cards",
+      "name": "Visual Daily Structure Card System",
+      "short_name": "Structure Cards",
+      "price": 24.99,
+      "description": "Complete card system with all three sizes. 45 activity cards for clear daily routines and predictability.",
+      "image": "coverengl.png",
+      "url": "https://paulrawe.gumroad.com/l/pvtevi",
+      "tags": ["structure", "daily_life", "autism"],
+      "helps_with": [
+        "Chaotic morning and evening routines",
+        "Constant questions 'What's next?'",
+        "Difficult transitions between activities",
+        "Preparing for special events"
+      ],
+      "priority_score": {
+        "structure": 10,
+        "daily_life": 8,
+        "autism": 8
+      }
+    },
+    {
+      "id": "communication_scales",
+      "name": "Autism Visual Communication Scales Bundle",
+      "short_name": "Communication Scales",
+      "price": 29.00,
+      "description": "6 visual scales that help autistic children communicate their internal states without words. Field-tested in real classrooms.",
+      "image": "skalenusa.jpg",
+      "url": "https://paulrawe.gumroad.com/l/dkgny",
+      "tags": ["communication", "school", "autism"],
+      "helps_with": [
+        "Recognizing meltdowns early",
+        "Communication without speech",
+        "Making overwhelm visible",
+        "Improving body awareness"
+      ],
+      "priority_score": {
+        "communication": 10,
+        "school": 6,
+        "autism": 10
+      }
+    }
+  ],
+  "affiliates": [
+    {
+      "id": "timer",
+      "name": "Visual Timer for Kids",
+      "description": "Shows remaining time visually. Helps with transitions and reduces stress during time limits.",
+      "url": "https://www.amazon.com/s?k=visual+timer+kids&tag=YOUR-TAG",
+      "tags": ["homework", "structure", "adhd"],
+      "priority_score": {
+        "homework": 5,
+        "structure": 5,
+        "adhd": 6
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Noise-Cancelling Headphones",
+      "description": "Significantly reduces ambient noise. Essential for sensory overwhelm and loud environments.",
+      "url": "https://www.amazon.com/s?k=noise+cancelling+headphones+kids&tag=YOUR-TAG",
+      "tags": ["autism", "school", "daily_life"],
+      "priority_score": {
+        "autism": 7,
+        "school": 5
+      }
+    },
+    {
+      "id": "weighted_blanket",
+      "name": "Weighted Blanket",
+      "description": "Calming pressure helps with sleep and anxiety. Deep pressure therapy for regulation.",
+      "url": "https://www.amazon.com/s?k=weighted+blanket+kids&tag=YOUR-TAG",
+      "tags": ["autism", "adhd", "daily_life"],
+      "priority_score": {
+        "autism": 6,
+        "adhd": 5
+      }
+    },
+    {
+      "id": "fidget",
+      "name": "Fidget Tools & Sensory Items",
+      "description": "Small tools for busy hands. Help with concentration and energy regulation.",
+      "url": "https://www.amazon.com/s?k=fidget+toys+kids&tag=YOUR-TAG",
+      "tags": ["adhd", "homework", "school"],
+      "priority_score": {
+        "adhd": 5,
+        "homework": 4
+      }
+    },
+    {
+      "id": "wobble_cushion",
+      "name": "Dynamic Wobble Cushion",
+      "description": "Allows movement while sitting. Helps stay focused longer during homework.",
+      "url": "https://www.amazon.com/s?k=wobble+cushion+kids&tag=YOUR-TAG",
+      "tags": ["adhd", "homework", "school"],
+      "priority_score": {
+        "adhd": 5,
+        "homework": 5
+      }
+    }
+  ],
+  "lead_magnet": {
+    "id": "emergency_checklist",
+    "name": "Emergency Checklist: Homework Crisis Prevention",
+    "description": "Free PDF with 5 concrete strategies for early recognition and de-escalation",
+    "file": "emergency-checklist.pdf",
+    "available": true
+  }
+}

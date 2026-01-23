@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the right tools for your daily life with autism and ADHD. Personalized recommendations based on your real challenges.">
+    <title>Daily Help Finder | Autism & ADHD Resources</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon (optional - use the same as your main page) -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="finder-header">
+            <h1>Which Tools Fit Your Daily Life?</h1>
+            <p>Answer 10 questions about your daily life and get personalized recommendations – plus real tips that helped us.</p>
+            <div class="subtitle">
+                💡 No sales pitch – genuine help with real value
+            </div>
+        </header>
+        
+        <!-- Questions Container -->
+        <div id="questions-container">
+            <!-- Progress Bar -->
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">Question 0 of 10</div>
+            </div>
+            
+            <!-- Question Card -->
+            <div id="question-card" class="question-card">
+                <!-- Questions will be rendered here by JavaScript -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p style="margin-top: 1rem; color: var(--text-light);">Loading questions...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Results Container (hidden initially) -->
+        <div id="results-container" class="results-container">
+            <!-- Results will be rendered here by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+    
+</body>
+</html>

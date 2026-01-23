@@ -1,0 +1,299 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "How does homework usually go in your home?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "daily_battle",
+          "label": "Daily battle – often ends in tears",
+          "score": {"homework": 3, "school": 2, "autism": 1, "adhd": 1}
+        },
+        {
+          "value": "challenging",
+          "label": "Challenging but we get through it",
+          "score": {"homework": 2, "school": 1}
+        },
+        {
+          "value": "manageable",
+          "label": "Usually manageable",
+          "score": {"homework": 0}
+        },
+        {
+          "value": "no_homework",
+          "label": "No homework yet / Not applicable",
+          "score": {"homework": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "We learned that homework after a full school day is asking our child's depleted executive function to do the impossible. Setting a strict time limit (not task completion) was game-changing.",
+        "science": "After 6-7 hours of masking and compensating at school, the 'cognitive battery' is empty. Forcing homework leads to shutdown or meltdown, not learning.",
+        "quick_tip": "Set a timer for 15-20 minutes. When it rings, homework ends – regardless of completion. Communicate this with the teacher."
+      }
+    },
+    {
+      "id": 2,
+      "question": "Does your child have autism, ADHD, or both?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "autism",
+          "label": "Autism",
+          "score": {"autism": 3, "structure": 2, "communication": 2}
+        },
+        {
+          "value": "adhd",
+          "label": "ADHD",
+          "score": {"adhd": 3, "homework": 2}
+        },
+        {
+          "value": "both",
+          "label": "Both autism and ADHD",
+          "score": {"autism": 3, "adhd": 3, "homework": 2, "school": 2}
+        },
+        {
+          "value": "unsure",
+          "label": "In assessment / Not sure yet",
+          "score": {"autism": 1, "adhd": 1, "homework": 1}
+        }
+      ],
+      "insight": {
+        "helped_us": "Understanding that 30-80% of autistic children also have ADHD helped us stop treating these as separate issues. They interact in complex ways.",
+        "science": "Co-occurring autism and ADHD create unique challenges. Autism needs predictability; ADHD needs stimulation. Finding the sweet spot requires understanding both.",
+        "quick_tip": "If both are present, prioritize strategies that address both: visual timers (autism) that create urgency (ADHD) work beautifully."
+      }
+    },
+    {
+      "id": 3,
+      "question": "How are your morning and evening routines?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "chaotic",
+          "label": "Chaotic – every day is different",
+          "score": {"structure": 3, "daily_life": 2, "autism": 2}
+        },
+        {
+          "value": "stressful",
+          "label": "Predictable but stressful",
+          "score": {"structure": 2, "daily_life": 1}
+        },
+        {
+          "value": "smooth",
+          "label": "Usually smooth",
+          "score": {"structure": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "A visual morning plan with pictures gave our child enormous security. No more constant questions about 'What's next?' – they can see the sequence.",
+        "science": "Predictable routines reduce cortisol levels in autistic children by up to 40%. Predictability isn't a luxury – it's a neurobiological need.",
+        "quick_tip": "Start with 3-5 fixed steps: Wake up → Get dressed → Breakfast. Visualize them with photos or symbols."
+      }
+    },
+    {
+      "id": 4,
+      "question": "How often do you experience meltdowns or severe overwhelm?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "daily",
+          "label": "Daily or multiple times daily",
+          "score": {"autism": 3, "communication": 3, "adhd": 2}
+        },
+        {
+          "value": "weekly",
+          "label": "Several times a week",
+          "score": {"autism": 2, "communication": 2, "adhd": 1}
+        },
+        {
+          "value": "rarely",
+          "label": "Rarely or never",
+          "score": {"autism": 0, "communication": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "We learned to recognize the signs earlier: higher voice pitch, starting to fidget, glazed eyes. Then our child needs immediate retreat – no negotiation.",
+        "science": "Meltdowns aren't tantrums – they're neurological overload reactions. The nervous system switches to survival mode. Early recognition prevents escalation.",
+        "quick_tip": "Watch for 3 early warning signs: body language, voice tone, withdrawal impulse. Then: reduce stimuli, don't discuss."
+      }
+    },
+    {
+      "id": 5,
+      "question": "Can your child express their needs and feelings well?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "difficult",
+          "label": "Very difficult – often only through behavior",
+          "score": {"communication": 3, "autism": 2}
+        },
+        {
+          "value": "sometimes",
+          "label": "Sometimes yes, sometimes no",
+          "score": {"communication": 2, "autism": 1}
+        },
+        {
+          "value": "well",
+          "label": "Usually possible",
+          "score": {"communication": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Visual tools were the breakthrough. Our child can now point to a scale instead of having to explain: 'My battery is empty' or 'Too many stimuli.'",
+        "science": "Alexithymia (difficulty recognizing/naming emotions) affects about 50% of autistic people. Visual communication bypasses the language barrier.",
+        "quick_tip": "Use traffic light systems: Green = OK, Yellow = need break, Red = overwhelmed. Simple but effective."
+      }
+    },
+    {
+      "id": 6,
+      "question": "How is school/kindergarten going?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "struggling",
+          "label": "Very challenging – frequent conflicts",
+          "score": {"school": 3, "autism": 2, "adhd": 2}
+        },
+        {
+          "value": "mixed",
+          "label": "Mixed – good and difficult days",
+          "score": {"school": 2, "autism": 1, "adhd": 1}
+        },
+        {
+          "value": "good",
+          "label": "Going mostly well",
+          "score": {"school": 1}
+        },
+        {
+          "value": "not_applicable",
+          "label": "Not in school/kindergarten yet",
+          "score": {"school": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "The support aide was crucial. But clear communication with the teacher really helped. We developed an emergency plan together.",
+        "science": "Studies show: Clear structures, consistent support person, and retreat options are the three most important factors for successful inclusion.",
+        "quick_tip": "Schedule a monthly 15-minute meeting with the teacher. Regular, brief, solution-focused."
+      }
+    },
+    {
+      "id": 7,
+      "question": "How do you handle transitions and changes?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "very_difficult",
+          "label": "Very difficult – every change is a battle",
+          "score": {"structure": 3, "autism": 3, "daily_life": 2}
+        },
+        {
+          "value": "needs_prep",
+          "label": "Works with preparation and time",
+          "score": {"structure": 2, "autism": 2, "daily_life": 1}
+        },
+        {
+          "value": "flexible",
+          "label": "Relatively flexible",
+          "score": {"structure": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Visual countdown + announcement 10-5-1 minutes before. Our child can mentally prepare. Without warning: chaos. With warning: manageable.",
+        "science": "Autistic brains have difficulty with 'set-shifting' (task switching). Warning time activates prefrontal control systems and reduces stress.",
+        "quick_tip": "Use timers with visual countdown. Don't say 'Soon,' say 'In 5 minutes.' Stay concrete."
+      }
+    },
+    {
+      "id": 8,
+      "question": "Does your child struggle with focus and attention?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "severe",
+          "label": "Yes, severe – can't start tasks, constant distraction",
+          "score": {"adhd": 3, "homework": 3, "school": 2}
+        },
+        {
+          "value": "moderate",
+          "label": "Moderate – depends on interest level",
+          "score": {"adhd": 2, "homework": 2}
+        },
+        {
+          "value": "mild",
+          "label": "Mild or situational",
+          "score": {"adhd": 1, "homework": 1}
+        },
+        {
+          "value": "no_issues",
+          "label": "No significant issues",
+          "score": {"adhd": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "We stopped saying 'just focus!' – ADHD brains literally can't regulate attention that way. External structure (timers, body doubling, breaks) replaced internal willpower.",
+        "science": "ADHD isn't a focus problem – it's an attention regulation problem. The brain can hyperfocus on engaging tasks but struggles with 'boring' necessary ones.",
+        "quick_tip": "Use Pomodoro technique: 15-minute work sprints with 5-minute breaks. External structure compensates for internal regulation difficulties."
+      }
+    },
+    {
+      "id": 9,
+      "question": "How challenging are public situations (shopping, restaurants, etc.)?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "avoid",
+          "label": "We avoid it mostly – too stressful",
+          "score": {"autism": 3, "daily_life": 2}
+        },
+        {
+          "value": "short_only",
+          "label": "Only short trips or with preparation",
+          "score": {"autism": 2, "daily_life": 1}
+        },
+        {
+          "value": "manageable",
+          "label": "Usually manageable",
+          "score": {"autism": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "Noise-cancelling headphones are our lifesaver. Plus: we shop at less busy times. Saturday at 11 AM? Never again.",
+        "science": "Sensory filtering works differently in autism. All sensory input arrives unfiltered – a supermarket is pure sensory overload.",
+        "quick_tip": "Plan sensorially friendly times: early morning or late evening. Bring headphones. Announce duration."
+      }
+    },
+    {
+      "id": 10,
+      "question": "What's your biggest wish right now?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "peace",
+          "label": "More peace in daily life – fewer conflicts",
+          "score": {"structure": 3, "autism": 2, "daily_life": 2}
+        },
+        {
+          "value": "understanding",
+          "label": "To better understand my child",
+          "score": {"communication": 3, "autism": 2}
+        },
+        {
+          "value": "school_success",
+          "label": "For school to go better",
+          "score": {"school": 3, "homework": 2}
+        },
+        {
+          "value": "homework_help",
+          "label": "To end homework battles",
+          "score": {"homework": 3, "school": 2, "adhd": 1}
+        }
+      ],
+      "insight": {
+        "helped_us": "We understood: there's no perfect solution. But there are many small helps that together make a huge difference.",
+        "science": "Small, consistent changes have greater long-term impact than large, one-time interventions. Sustainability beats intensity.",
+        "quick_tip": "Choose ONE thing you want to improve in the next 2 weeks. Not ten. One."
+      }
+    }
+  ]
+}
