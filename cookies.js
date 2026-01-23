@@ -592,3 +592,63 @@ function getItem(key) {
     return null;
 }
 document.querySelectorAll('.ad-container').forEach(el => el.style.display = 'none');
+// ==================================================
+// HELP FINDER LINK – Insert after disclaimer (ALL PAGES)
+// ==================================================
+// ADD THIS CODE AT THE END OF YOUR EXISTING cookies.js FILE
+// ==================================================
+
+(function() {
+    'use strict';
+
+    function insertHelpBox() {
+        // Check if already present
+        if (document.getElementById('help-box-guidance')) return;
+
+        // Find the medical disclaimer
+        const disclaimer = document.getElementById('medical-disclaimer');
+        if (!disclaimer) return; // No disclaimer, no box
+
+        // Calculate relative path based on current URL
+        const currentPath = window.location.pathname;
+        const depth = (currentPath.match(/\//g) || []).length - 1;
+        
+        let relativePathToFinder = '';
+        if (depth === 0) {
+            relativePathToFinder = 'daily-help-finder/index.html';
+        } else {
+            relativePathToFinder = '../'.repeat(depth) + 'daily-help-finder/index.html';
+        }
+
+        // Box HTML with calculated relative path
+        const boxHTML = `
+            <div id="help-box-guidance" style="
+                max-width: 900px;
+                margin: 1rem auto;
+                padding: 0.8rem 1rem;
+                background: #f4f6f8;
+                border-left: 4px solid #2f6f8f;
+                border-radius: 6px;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #2b2b2b;
+            ">
+                💡 Need guidance right now?
+                <a href="${relativePathToFinder}"
+                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
+                    → Quick questions, direct help (2 min)
+                </a>
+            </div>
+        `;
+
+        // Insert box directly AFTER the disclaimer
+        disclaimer.insertAdjacentHTML('afterend', boxHTML);
+    }
+
+    // Load after DOM Ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', insertHelpBox);
+    } else {
+        insertHelpBox();
+    }
+})();
