@@ -76,7 +76,7 @@
         }
 
         main {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
@@ -117,6 +117,64 @@
             color: var(--color-primary);
         }
 
+        /* Category Filter Navigation */
+        .category-filter {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .category-filter h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover {
+            background-color: var(--color-hover);
+            border-color: var(--color-secondary);
+        }
+
+        .filter-btn.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+
+        .filter-btn .count {
+            display: inline-block;
+            background-color: rgba(0,0,0,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .filter-btn.active .count {
+            background-color: rgba(255,255,255,0.3);
+        }
+
         /* Products Intro */
         .products-intro {
             background-color: var(--bg-card);
@@ -137,10 +195,18 @@
             margin: 0 auto;
         }
 
+        /* Results Counter */
+        .results-info {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--color-muted);
+            font-size: 0.95rem;
+        }
+
         /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -152,6 +218,8 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -160,22 +228,54 @@
             border-color: var(--color-secondary);
         }
 
-        .product-image {
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .product-badge.new {
+            background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
+        }
+
+        .product-badge.bundle {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .product-image-wrapper {
+            position: relative;
             width: 100%;
             height: 250px;
-            object-fit: contain;
-            border-bottom: 3px solid var(--color-primary);
             background-color: #f8f9fa;
+            border-bottom: 3px solid var(--color-primary);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .product-content {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-title {
             color: var(--color-primary);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
         .product-category {
@@ -191,6 +291,7 @@
         .product-description {
             margin-bottom: 1rem;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .product-benefits {
@@ -203,6 +304,7 @@
             padding-left: 1.5rem;
             margin-bottom: 0.5rem;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .product-benefits li:before {
@@ -217,7 +319,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1.5rem;
+            margin-top: auto;
             padding-top: 1.5rem;
             border-top: 2px solid #f0f0f0;
         }
@@ -226,6 +328,13 @@
             font-size: 1.6rem;
             font-weight: bold;
             color: var(--color-primary);
+        }
+
+        .product-price small {
+            font-size: 1rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 0.5rem;
         }
 
         .product-cta {
@@ -319,6 +428,11 @@
             color: #cccccc;
         }
 
+        /* Hidden class for filtering */
+        .hidden {
+            display: none !important;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.6rem;
@@ -331,6 +445,14 @@
             .trust-badges {
                 flex-direction: column;
                 align-items: stretch;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
             }
         }
     </style>
@@ -374,24 +496,76 @@
     </div>
 </section>
 
-<!-- Products Intro -->
-<section class="products-intro">
-    <h2>Our Resources</h2>
-    <p>
-        Structure aids, visualizations, and practical tools that help autistic children and 
-        children with ADHD manage daily life better. All materials are ready for 
-        immediate download and use.
-    </p>
+<!-- Category Filter -->
+<section class="category-filter">
+    <h3>📂 Browse by Category</h3>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">
+            All Products <span class="count">4</span>
+        </button>
+        <button class="filter-btn" data-category="structure">
+            Daily Structure <span class="count">1</span>
+        </button>
+        <button class="filter-btn" data-category="communication">
+            Communication <span class="count">1</span>
+        </button>
+        <button class="filter-btn" data-category="school">
+            School Support <span class="count">1</span>
+        </button>
+        <button class="filter-btn" data-category="bundle">
+            Bundles <span class="count">1</span>
+        </button>
+    </div>
 </section>
+
+<!-- Results Info -->
+<div class="results-info">
+    <p id="results-text">Showing all 4 products</p>
+</div>
 
 <!-- Products Grid -->
 <div class="products-grid">
 
-    <!-- PRODUCT 1: Complete Autism Support System Bundle -->
-    <div class="product-card">
-        <img src="bundleengl.png" alt="Complete Autism Support System Bundle" class="product-image">
+    <!-- PRODUCT 1: Homework Emergency Plan -->
+    <div class="product-card" data-categories="school">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="homework-cover.jpg" alt="Autism Homework Emergency Plan" class="product-image">
+        </div>
         <div class="product-content">
-            <span class="product-category">🎁 BEST VALUE BUNDLE · Structure · Communication</span>
+            <span class="product-category">📝 School Support · Homework · Crisis Management</span>
+            <h3 class="product-title">Autism Homework Emergency Plan</h3>
+            <p class="product-description">
+                Transform daily homework battles into structured success. This 43-page evidence-based 
+                guide gives you concrete, immediately actionable strategies developed from current 
+                autism research and real classroom experience by teacher Katharina.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>43 pages</strong> of professional content</li>
+                <li><strong>Complete Emergency Plan:</strong> Step-by-step crisis protocols</li>
+                <li><strong>3-Phase System:</strong> Before, During, After strategies</li>
+                <li><strong>Printable Tools:</strong> Checklists, timers, emergency cards</li>
+                <li><strong>Teacher-Written:</strong> Real strategies from classroom experience</li>
+                <li><strong>18 Scientific References:</strong> Evidence-based approach</li>
+                <li>Neurodiversity-affirming & immediately actionable</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$9.99</span>
+                <a href="https://paulrawe.gumroad.com/l/vwfbi" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2: Complete Bundle -->
+    <div class="product-card" data-categories="bundle structure communication">
+        <div class="product-image-wrapper">
+            <span class="product-badge bundle">BEST VALUE</span>
+            <img src="bundleengl.png" alt="Complete Autism Support System Bundle" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">🎁 BUNDLE · Structure · Communication</span>
             <h3 class="product-title">Complete Autism Support System Bundle</h3>
             <p class="product-description">
                 <strong>Save $14!</strong> Get both essential systems together: Daily structure cards 
@@ -408,7 +582,7 @@
                 <li>Proactive structure + reactive communication tools</li>
             </ul>
             <div class="product-footer">
-                <span class="product-price">$39.99 <small style="text-decoration:line-through;color:#999;">$53.99</small></span>
+                <span class="product-price">$39.99 <small>$53.99</small></span>
                 <a href="https://paulrawe.gumroad.com/l/vptozg" class="product-cta" target="_blank" rel="noopener">
                     Get Bundle →
                 </a>
@@ -416,11 +590,13 @@
         </div>
     </div>
 
-    <!-- PRODUCT 2: Visual Daily Structure Card System -->
-    <div class="product-card">
-        <img src="coverengl.png" alt="Visual Daily Structure Card System" class="product-image">
+    <!-- PRODUCT 3: Visual Daily Structure Card System -->
+    <div class="product-card" data-categories="structure">
+        <div class="product-image-wrapper">
+            <img src="coverengl.png" alt="Visual Daily Structure Card System" class="product-image">
+        </div>
         <div class="product-content">
-            <span class="product-category">Category: Daily Structure · Routine · Transitions</span>
+            <span class="product-category">📅 Daily Structure · Routine · Transitions</span>
             <h3 class="product-title">Visual Daily Structure Card System</h3>
             <p class="product-description">
                 Help your autistic child navigate daily routines with confidence. Complete card 
@@ -445,11 +621,13 @@
         </div>
     </div>
 
-    <!-- PRODUCT 3: Autism Visual Communication Scales Bundle -->
-    <div class="product-card">
-        <img src="skalenusa.jpg" alt="Autism Visual Communication Scales Bundle" class="product-image">
+    <!-- PRODUCT 4: Autism Visual Communication Scales Bundle -->
+    <div class="product-card" data-categories="communication school">
+        <div class="product-image-wrapper">
+            <img src="skalenusa.jpg" alt="Autism Visual Communication Scales Bundle" class="product-image">
+        </div>
         <div class="product-content">
-            <span class="product-category">Category: Communication · Self-Regulation · School</span>
+            <span class="product-category">💬 Communication · Self-Regulation · School</span>
             <h3 class="product-title">Autism Visual Communication Scales Bundle</h3>
             <p class="product-description">
                 Comprehensive toolkit with 6 visual scales that helps autistic children 
@@ -609,6 +787,50 @@
         </div>
     </div>
 </div>
+
+<!-- Category Filter Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    const resultsText = document.getElementById('results-text');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const category = this.dataset.category;
+            let visibleCount = 0;
+            
+            productCards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    const cardCategories = card.dataset.categories.split(' ');
+                    if (cardCategories.includes(category)) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+            
+            // Update results text
+            if (category === 'all') {
+                resultsText.textContent = `Showing all ${visibleCount} products`;
+            } else {
+                resultsText.textContent = `Showing ${visibleCount} product${visibleCount !== 1 ? 's' : ''} in ${this.textContent.split('(')[0].trim()}`;
+            }
+        });
+    });
+});
+</script>
 
 <!-- Cookie Consent Script -->
 <script src="cookies.js" defer></script>
