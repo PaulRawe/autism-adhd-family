@@ -392,12 +392,95 @@
     </div>
 </div>
 
-<div class="footer">
-    <p><strong>Flying on a Plane - Social Story</strong></p>
-    <p>Developed by Paul Rawe</p>
-    <p>autismus-adhs-alltag.de</p>
-    <p style="margin-top: 20px; font-size: 10pt;">© 2026 | All Rights Reserved</p>
+<footer>
+    <!-- Quick Navigation -->
+    <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #444;">
+        <a href="../index.html" style="color: #fff; text-decoration: none; margin: 0 1rem;">← Back to Homepage</a>
+        <span style="color: #666;">|</span>
+        <a href="../download.html" style="color: #fff; text-decoration: none; margin: 0 1rem;">📚 Downloads</a>
+    </div>
+    <p>&copy; 2026 Autism & ADHD - Real Parenting Experience</p>
+    <div class="legal">
+        <a href="../privacy.html">Privacy Policy</a> | 
+        <a href="../terms.html">Terms of Use</a> | 
+        <a href="../cookies.html">Cookie Settings</a> | 
+        <a href="../disclaimer.html">Disclaimer</a> | 
+        <a href="../about-us.html">About Us</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;color:#ccc;">This website is operated from Germany and complies with EU data protection regulations (GDPR).</p>
+</footer>
+
+<!-- Cookie Consent Banner - controlled by cookies.js -->
+<div id="cookie-banner">
+    <div class="banner-content">
+        <p>
+            We use cookies to analyze and improve the use of our website. 
+            <a href="../cookies.html">Learn more</a>
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies()">Essential Only</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Settings</button>
+        </div>
+    </div>
 </div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie Settings</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Essential Cookies</h3>
+                <p>These cookies are required for basic website functionality.</p>
+                <div class="cookie-toggle">
+                    <label>Essential</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analytics Cookies</h3>
+                <p>These cookies help us understand website usage (privacy-friendly analytics).</p>
+                <div class="cookie-toggle">
+                    <label>Analytics</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing Cookies</h3>
+                <p>These cookies may be used for future advertising purposes.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Cancel</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Save</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Consent Script -->
+<script src="../cookies.js" defer></script>
+<script src="disclaimer.js" defer></script>
+
+</body>
+</html>
 
 </body>
 </html>
