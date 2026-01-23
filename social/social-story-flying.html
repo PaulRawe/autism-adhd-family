@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flying on a Plane - Social Story</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { font-family: Arial, Verdana, sans-serif; font-size: 14pt; line-height: 1.7; color: #333; background: #FAFAFA; max-width: 210mm; margin: 0 auto; padding: 20px; }
+        .page-break { page-break-after: always; }
+        .title-page { text-align: center; padding: 80px 20px; min-height: 250mm; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #87CEEB30 0%, #87CEEB10 100%); border-radius: 20px; }
+        h1 { font-size: 36pt; color: #87CEEB; margin: 30px 0 10px; font-weight: bold; }
+        h2 { font-size: 24pt; color: #87CEEB; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 3px solid #87CEEB; page-break-after: avoid; }
+        h3 { font-size: 18pt; color: #87CEEB; margin: 30px 0 15px; }
+        p { margin: 1em 0; text-align: left; }
+        .info-box { background: #E8F4FF; border-left: 5px solid #87CEEB; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .warning-box { background: #FFF4E6; border-left: 5px solid #F9A03F; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .success-box { background: #E8F8F0; border-left: 5px solid #52C1A6; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .step-list { counter-reset: step-counter; list-style: none; padding-left: 0; }
+        .step-list li { counter-increment: step-counter; margin: 20px 0; padding-left: 60px; position: relative; min-height: 40px; }
+        .step-list li::before { content: counter(step-counter); position: absolute; left: 0; top: 0; background: #87CEEB; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18pt; font-weight: bold; }
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { padding: 10px 0 10px 40px; position: relative; border-bottom: 1px solid #EEEEEE; }
+        .checklist li::before { content: "☐"; position: absolute; left: 0; font-size: 20pt; color: #87CEEB; }
+        .fillable-field { border-bottom: 2px solid #87CEEB; min-width: 200px; display: inline-block; padding: 5px; margin: 0 10px; }
+        .notes-section { background: #FFFEF7; border: 2px dashed #F9A03F; padding: 30px; margin: 30px 0; border-radius: 10px; }
+        .footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 2px solid #DDDDDD; color: #666; font-size: 12pt; }
+        img { max-width: 120mm; max-height: 120mm; width: auto; height: auto; display: block; margin: 0 auto; }
+        @media print { body { background: white; } .page-break { page-break-after: always; } }
+    </style>
+</head>
+<body>
+
+<div class="title-page page-break">
+    <img src="airplane.png" alt="Airplane">
+    <h1>Flying on a Plane</h1>
+    <p style="font-size: 20pt; color: #666;">A Social Story</p>
+    <p style="font-size: 14pt; color: #999; margin-top: 50px;">Developed by Paul Rawe</p>
+    <div class="footer"><p>autismus-adhs-alltag.de</p></div>
+</div>
+
+<div class="page-break">
+    <h2>📖 What does it mean: Flying on a plane?</h2>
+    
+    <p>Flying on a plane means that I travel with a large airplane from one place to another place. The airplane flies high in the air, above clouds and countries.</p>
+    
+    <p>An airplane is like a big bus – except it flies instead of driving on the road.</p>
+    
+    <div class="info-box">
+        <strong>✈️ Why do people fly?</strong>
+        <ul style="margin-top: 10px;">
+            <li>To reach faraway places quickly</li>
+            <li>To go on vacation</li>
+            <li>To visit family or friends</li>
+            <li>Because flying is faster than car or train</li>
+        </ul>
+    </div>
+    
+    <p>Many millions of people fly every day. Flying is safe and normal.</p>
+    
+    <p>A flight can be short (1-2 hours) or long (5-10 hours or more).</p>
+</div>
+
+<div class="page-break">
+    <h2>📅 Preparing for the Flight</h2>
+    
+    <div class="info-box">
+        <p><strong>My Flight:</strong></p>
+        <p><strong>From:</strong> <span class="fillable-field">_______________</span> <strong>To:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Date:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Departure time:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Flight number:</strong> <span class="fillable-field">_______________</span></p>
+        <p><strong>Who's coming with me:</strong> <span class="fillable-field">_______________</span></p>
+    </div>
+    
+    <h3>⏱️ How long does everything take?</h3>
+    <p>A flight day consists of several parts:</p>
+    <ul>
+        <li><strong>Arrival at airport:</strong> 2-3 hours before departure</li>
+        <li><strong>Check-in & security:</strong> 30-60 minutes</li>
+        <li><strong>Waiting at gate:</strong> 15-45 minutes</li>
+        <li><strong>Boarding:</strong> 20-30 minutes</li>
+        <li><strong>The flight itself:</strong> varies (e.g., 2 hours)</li>
+        <li><strong>Getting off & baggage:</strong> 20-40 minutes</li>
+    </ul>
+    
+    <h3>🎒 What should I bring?</h3>
+    <ul class="checklist">
+        <li>Passport or ID card</li>
+        <li>Boarding pass (often digital on phone)</li>
+        <li>Small carry-on bag (backpack or bag)</li>
+        <li>Headphones (to dampen noise)</li>
+        <li>Book, tablet, or something to read/play with</li>
+        <li>Snacks (if allowed) and empty water bottle</li>
+        <li>Optional: Gum (helps with ear pressure)</li>
+        <li>Optional: Stuffed animal or comfort object</li>
+    </ul>
+</div>
+
+<div class="page-break">
+    <h2>👣 Step by Step: What happens on flight day?</h2>
+    
+    <ol class="step-list">
+        <li><strong>Arrival at the Airport</strong><br>
+        We arrive at the airport 2-3 hours before departure. The airport is a large building with many people. There are signs showing the way.</li>
+        
+        <li><strong>Check-in</strong><br>
+        First we go to check-in. There we drop off our large suitcases (if we have any). We get our boarding passes. Sometimes this is already done online and we skip this step.</li>
+        
+        <li><strong>Security Check</strong><br>
+        Then we go to security. Here we have to go through a metal detector. We put our phone, keys, and jacket in a bin. The luggage is scanned. This is normal and serves everyone's safety.</li>
+        
+        <li><strong>Waiting in the Terminal</strong><br>
+        After security, we're in the "terminal" – that's the waiting area. There are shops, restaurants, and benches here. We look at our boarding pass to see which gate we need (e.g., "Gate A12").</li>
+        
+        <li><strong>Going to the Gate</strong><br>
+        About 30-45 minutes before departure, we go to our gate. The gate is the waiting area right before the plane. We sit down here and wait.</li>
+        
+        <li><strong>Boarding (Getting On)</strong><br>
+        When boarding begins, our name or seat number is called. We show the boarding pass and walk through a long corridor (jet bridge) directly into the plane.</li>
+        
+        <li><strong>Finding Seat and Sitting Down</strong><br>
+        On the plane, we look for our seat. The number is above the seat (e.g., "15A"). We sit down, put our carry-on under the seat or in the overhead bin. We buckle up.</li>
+        
+        <li><strong>Safety Announcement</strong><br>
+        The flight attendants show what to do in an emergency. This is a routine done on every flight. It doesn't mean something bad will happen.</li>
+        
+        <li><strong>Takeoff</strong><br>
+        The plane rolls to the runway. It goes faster and faster until it lifts off. You feel a slight pressure in your stomach (like on a roller coaster). After 5-10 minutes the plane is in the air and it gets calmer.</li>
+        
+        <li><strong>During the Flight</strong><br>
+        Now we can loosen the belt (but not remove it). We can read, listen to music, sleep, or look out the window. On longer flights there's food and drinks. I'm allowed to get up and go to the bathroom.</li>
+        
+        <li><strong>Landing</strong><br>
+        Before landing, they say: "Please fasten seatbelts." The plane descends slowly. There's a small jolt when the wheels touch the ground. Then the plane rolls to the parking position.</li>
+        
+        <li><strong>Getting Off</strong><br>
+        When the plane has stopped, we're allowed to stand up. We take our carry-on and walk out of the plane in a line. We follow the signs to baggage claim (if we have luggage).</li>
+        
+        <li><strong>Picking Up Luggage</strong><br>
+        At baggage claim, we wait until our suitcases appear on the conveyor belt. We take them and go to the exit.</li>
+        
+        <li><strong>Arrived at Destination</strong><br>
+        We're here! The flight is over. Everything went well.</li>
+    </ol>
+</div>
+
+<div class="page-break">
+    <h2>👀 What will I see, hear, and feel?</h2>
+    
+    <div class="info-box">
+        <h3>👁️ Seeing</h3>
+        <ul>
+            <li>Many people at the airport</li>
+            <li>Large display boards with flight numbers and times</li>
+            <li>Long corridors and escalators</li>
+            <li>The airplane from outside (large and with wings)</li>
+            <li>Seats in the plane in rows</li>
+            <li>Clouds and sky out the window</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>👂 Hearing</h3>
+        <ul>
+            <li>Many voices and announcements at the airport</li>
+            <li>Beeping from security scanner</li>
+            <li>Announcements over loudspeaker</li>
+            <li>Engine noise when the plane starts</li>
+            <li>A humming sound during the flight</li>
+            <li>Sometimes a ding sound in the plane (that's normal)</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>✋ Feeling</h3>
+        <ul>
+            <li>A slight pressure in stomach during takeoff and landing</li>
+            <li>Sometimes pressure in ears (can chew gum or swallow)</li>
+            <li>The seat under me (sometimes a bit bumpy when there's turbulence)</li>
+            <li>The seatbelt around my waist</li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>⚠️ What might be difficult?</h2>
+    
+    <div class="warning-box">
+        <h3>Challenge 1: The airport is loud and crowded</h3>
+        <p>At the airport there are many people, announcements, and noises. That can be overwhelming.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+            <li>Wear noise-canceling headphones or earplugs</li>
+            <li>Hold Mom/Dad's hand</li>
+            <li>Look for a quiet corner to wait</li>
+            <li>Focus on one thing (e.g., a book or game)</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Challenge 2: Sitting still for a long time</h3>
+        <p>On the plane I have to sit in my seat for a long time. That can be difficult.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+            <li>Bring activities (book, tablet, coloring book)</li>
+            <li>I'm allowed to get up and stretch during the flight</li>
+            <li>Listen to music or an audiobook</li>
+            <li>Look out the window (clouds are interesting!)</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Challenge 3: Ear pressure</h3>
+        <p>During takeoff and landing my ears might feel strange or hurt. That's pressure.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+            <li>Chew gum</li>
+            <li>Swallow often</li>
+            <li>Yawn</li>
+            <li>Drink something</li>
+            <li>Pinch nose and gently blow (helps equalize pressure)</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Challenge 4: Turbulence (bumpy air)</h3>
+        <p>Sometimes the plane shakes a little. That's called turbulence. It can feel like driving over a bumpy road.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+            <li>Know that this is completely normal and safe</li>
+            <li>The pilot knows what to do</li>
+            <li>Keep seatbelt fastened</li>
+            <li>Hold Mom/Dad's hand</li>
+            <li>Take deep breaths</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>Challenge 5: Fear or nervousness</h3>
+        <p>I might be scared because flying is new to me. That's okay.</p>
+        <p><strong>Solution:</strong></p>
+        <ul>
+            <li>Know that flying is very safe (safer than driving)</li>
+            <li>Breathe deeply in and out (breathing technique)</li>
+            <li>Think of something nice (e.g., the vacation destination)</li>
+            <li>Talk to Mom/Dad</li>
+            <li>Hold a stuffed animal or comfort object</li>
+        </ul>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>🛠️ What can help me?</h2>
+    
+    <div class="success-box">
+        <h3>✋ I can always speak up</h3>
+        <p>If something becomes too much, I'm allowed to say it:</p>
+        <ul>
+            <li>"It's too loud for me."</li>
+            <li>"I need a break."</li>
+            <li>"I don't feel well."</li>
+        </ul>
+        <p>Mom or Dad will help me.</p>
+    </div>
+    
+    <div class="success-box">
+        <h3>😤 Breathing Technique</h3>
+        <p>When I'm nervous:</p>
+        <ol>
+            <li>Slowly breathe in through nose (1-2-3-4)</li>
+            <li>Briefly hold breath (1-2)</li>
+            <li>Slowly breathe out through mouth (1-2-3-4-5-6)</li>
+            <li>Repeat three times</li>
+        </ol>
+    </div>
+    
+    <div class="success-box">
+        <h3>🧸 Comfort Object</h3>
+        <p>I'm allowed to bring something calming:</p>
+        <ul>
+            <li>A small stuffed animal</li>
+            <li>A fidget spinner</li>
+            <li>A stone or another small object</li>
+        </ul>
+        <p>I can hold this in my hand during the flight.</p>
+    </div>
+    
+    <div class="success-box">
+        <h3>💬 Asking Questions</h3>
+        <p>I'm allowed to ask questions:</p>
+        <ul>
+            <li>"How much longer is the flight?"</li>
+            <li>"What was that noise?"</li>
+            <li>"When can we stand up?"</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>👨‍👩‍👧 Mom/Dad is with me</h3>
+        <p>Mom or Dad sits right next to me on the plane. They're watching over me. I'm not alone.</p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>🎉 After Landing</h2>
+    
+    <div class="success-box">
+        <h3>✅ I did it!</h3>
+        <p>The landing is over. I flew! That was brave and great.</p>
+        <p>Now I'm at the destination and can be happy.</p>
+    </div>
+    
+    <h3>🏠 At the Destination</h3>
+    <p>After the flight we can:</p>
+    <ul>
+        <li>Go to the hotel or accommodation</li>
+        <li>Eat and drink something</li>
+        <li>Rest</li>
+        <li>Enjoy the vacation or visit</li>
+    </ul>
+    
+    <div class="success-box">
+        <h3>⭐ I'm proud of myself!</h3>
+        <p>Flying is exciting for many people – even for adults.</p>
+        <p>I mastered a big challenge!</p>
+        <p>Next time it will be easier because now I know how it works.</p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>📝 My Personal Notes</h2>
+    
+    <div class="notes-section">
+        <h3>Where are we flying and why?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">What am I bringing in my carry-on?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">What worries me most?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">What helps me stay calm?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+        
+        <h3 style="margin-top: 30px;">What am I looking forward to at the destination?</h3>
+        <p class="fillable-field" style="width: 80%; min-height: 60px;"></p>
+    </div>
+</div>
+
+<div class="page-break">
+    <h2>👨‍👩‍👧 Information for Parents</h2>
+    
+    <div class="info-box">
+        <h3>Preparation at Home</h3>
+        <ul>
+            <li>Read this story together daily 5-7 days before the flight</li>
+            <li>Watch YouTube videos of airports and flights</li>
+            <li>Playfully act out "flying" (arrange chairs as seats)</li>
+            <li>Talk about the destination and build anticipation</li>
+        </ul>
+    </div>
+    
+    <div class="warning-box">
+        <h3>At the Airport</h3>
+        <ul>
+            <li>Be there early enough (avoid time pressure)</li>
+            <li>Look for quiet waiting area (away from noisy areas)</li>
+            <li>Have snacks and activities readily available</li>
+            <li>Ask airline for support (e.g., priority boarding)</li>
+        </ul>
+    </div>
+    
+    <div class="success-box">
+        <h3>During the Flight</h3>
+        <ul>
+            <li>Stay calm – your calmness transfers to the child</li>
+            <li>Praise small steps ("You're sitting great in your seat!")</li>
+            <li>Offer distraction, but don't force it</li>
+            <li>Ask flight attendants for help if needed</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>💡 Additional Tips</h3>
+        <ul>
+            <li>Some airlines offer special support for families with autistic children</li>
+            <li>Window seat can be calming (view outside)</li>
+            <li>Aisle seat allows easier standing up</li>
+            <li>Night flights can be quieter (fewer people, child is tired)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p><strong>Flying on a Plane - Social Story</strong></p>
+    <p>Developed by Paul Rawe</p>
+    <p>autismus-adhs-alltag.de</p>
+    <p style="margin-top: 20px; font-size: 10pt;">© 2026 | All Rights Reserved</p>
+</div>
+
+</body>
+</html>
