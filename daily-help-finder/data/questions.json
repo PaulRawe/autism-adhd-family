@@ -99,12 +99,12 @@
         {
           "value": "daily",
           "label": "Daily or multiple times daily",
-          "score": {"autism": 3, "communication": 3, "adhd": 2}
+          "score": {"autism": 3, "communication": 3, "adhd": 2, "anxiety": 2}
         },
         {
           "value": "weekly",
           "label": "Several times a week",
-          "score": {"autism": 2, "communication": 2, "adhd": 1}
+          "score": {"autism": 2, "communication": 2, "adhd": 1, "anxiety": 1}
         },
         {
           "value": "rarely",
@@ -153,12 +153,12 @@
         {
           "value": "struggling",
           "label": "Very challenging – frequent conflicts",
-          "score": {"school": 3, "autism": 2, "adhd": 2}
+          "score": {"school": 3, "autism": 2, "adhd": 2, "social": 2}
         },
         {
           "value": "mixed",
           "label": "Mixed – good and difficult days",
-          "score": {"school": 2, "autism": 1, "adhd": 1}
+          "score": {"school": 2, "autism": 1, "adhd": 1, "social": 1}
         },
         {
           "value": "good",
@@ -185,17 +185,17 @@
         {
           "value": "very_difficult",
           "label": "Very difficult – every change is a battle",
-          "score": {"structure": 3, "autism": 3, "daily_life": 2}
+          "score": {"structure": 3, "autism": 3, "daily_life": 2, "transitions": 3, "preparation": 3}
         },
         {
           "value": "needs_prep",
           "label": "Works with preparation and time",
-          "score": {"structure": 2, "autism": 2, "daily_life": 1}
+          "score": {"structure": 2, "autism": 2, "daily_life": 1, "transitions": 2, "preparation": 2}
         },
         {
           "value": "flexible",
           "label": "Relatively flexible",
-          "score": {"structure": 0}
+          "score": {"structure": 0, "transitions": 0}
         }
       ],
       "insight": {
@@ -244,17 +244,17 @@
         {
           "value": "avoid",
           "label": "We avoid it mostly – too stressful",
-          "score": {"autism": 3, "daily_life": 2}
+          "score": {"autism": 3, "daily_life": 2, "anxiety": 3, "social": 2, "preparation": 2}
         },
         {
           "value": "short_only",
           "label": "Only short trips or with preparation",
-          "score": {"autism": 2, "daily_life": 1}
+          "score": {"autism": 2, "daily_life": 1, "anxiety": 2, "social": 1, "preparation": 2}
         },
         {
           "value": "manageable",
           "label": "Usually manageable",
-          "score": {"autism": 0}
+          "score": {"autism": 0, "anxiety": 0}
         }
       ],
       "insight": {
@@ -293,6 +293,70 @@
         "helped_us": "We understood: there's no perfect solution. But there are many small helps that together make a huge difference.",
         "science": "Small, consistent changes have greater long-term impact than large, one-time interventions. Sustainability beats intensity.",
         "quick_tip": "Choose ONE thing you want to improve in the next 2 weeks. Not ten. One."
+      }
+    },
+    {
+      "id": 11,
+      "question": "How does your child handle medical appointments (doctor, dentist)?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "very_difficult",
+          "label": "Extremely stressful – often meltdowns or complete refusal",
+          "score": {"medical": 3, "anxiety": 3, "preparation": 3, "autism": 2}
+        },
+        {
+          "value": "challenging",
+          "label": "Difficult but doable with lots of preparation",
+          "score": {"medical": 2, "anxiety": 2, "preparation": 2, "autism": 1}
+        },
+        {
+          "value": "okay",
+          "label": "Manageable with some support",
+          "score": {"medical": 1, "preparation": 1}
+        },
+        {
+          "value": "fine",
+          "label": "Usually goes well",
+          "score": {"medical": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "We started reading social stories about the dentist 3 days before. Our child knew exactly what would happen – no surprises, much less fear. We also brought noise-cancelling headphones.",
+        "science": "Medical anxiety in autistic children isn't irrational – it's sensory (bright lights, strange sounds, being touched) plus uncertainty. Predictability through preparation reduces anxiety by up to 60%.",
+        "quick_tip": "Call ahead: ask if you can visit when it's quiet, if they can dim lights, if you can bring comfort objects. Most offices accommodate when you explain."
+      }
+    },
+    {
+      "id": 12,
+      "question": "Are there big life changes coming up or ongoing?",
+      "type": "radio",
+      "options": [
+        {
+          "value": "major_changes",
+          "label": "Yes – moving, new sibling, school change, or similar",
+          "score": {"development": 3, "milestones": 3, "transitions": 3, "preparation": 3, "anxiety": 2}
+        },
+        {
+          "value": "some_changes",
+          "label": "Some changes – learning new skills, friend sleepovers, etc.",
+          "score": {"development": 2, "milestones": 2, "life_skills": 2, "preparation": 2}
+        },
+        {
+          "value": "minor_changes",
+          "label": "Minor adjustments – nothing major",
+          "score": {"development": 1, "milestones": 1}
+        },
+        {
+          "value": "stable",
+          "label": "Life is pretty stable right now",
+          "score": {"development": 0}
+        }
+      ],
+      "insight": {
+        "helped_us": "When our second child was born, we prepared our autistic son for 8 weeks with books, pictures, and conversations. He still struggled, but way less than if it had been a surprise. Preparation = everything.",
+        "science": "Major life transitions activate the stress response system. For autistic children, this can mean weeks of dysregulation. Early, repeated preparation allows the brain to build neural pathways for the new reality.",
+        "quick_tip": "For big changes: start preparing 4-8 weeks early. Use pictures, social stories, and repeated conversations. Make the unknown known."
       }
     }
   ]
