@@ -18,7 +18,16 @@ class DailyHelpFinder {
             adhd: 0,
             structure: 0,
             communication: 0,
-            daily_life: 0
+            daily_life: 0,
+            // NEW: Social Stories tags
+            preparation: 0,
+            medical: 0,
+            development: 0,
+            milestones: 0,
+            transitions: 0,
+            social: 0,
+            anxiety: 0,
+            life_skills: 0
         };
         
         this.init();
@@ -302,7 +311,15 @@ class DailyHelpFinder {
             adhd: 'ADHD Management',
             structure: 'Daily Structure',
             communication: 'Communication',
-            daily_life: 'Daily Life'
+            daily_life: 'Daily Life',
+            preparation: 'Preparing for New Situations',
+            medical: 'Medical Appointments',
+            development: 'Developmental Milestones',
+            milestones: 'Major Life Changes',
+            transitions: 'Transitions & Changes',
+            social: 'Social Situations',
+            anxiety: 'Anxiety & Stress',
+            life_skills: 'Life Skills'
         };
         
         const maxScore = 30; // Estimate based on questions
@@ -457,7 +474,15 @@ class DailyHelpFinder {
             adhd: 0,
             structure: 0,
             communication: 0,
-            daily_life: 0
+            daily_life: 0,
+            preparation: 0,
+            medical: 0,
+            development: 0,
+            milestones: 0,
+            transitions: 0,
+            social: 0,
+            anxiety: 0,
+            life_skills: 0
         };
         
         // Hide results, show questions
