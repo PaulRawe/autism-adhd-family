@@ -8,7 +8,7 @@
 
     <!-- Enhanced SEO -->
     <meta name="description" content="Field-tested resources by Katharina (teacher) for autistic children and children with ADHD. Ready to use in school and home.">
-    <meta name="keywords" content="autism resources, ADHD school materials, autism visualizations, ADHD teaching materials, autism support tools">
+    <meta name="keywords" content="autism resources, ADHD school materials, autism visualizations, ADHD teaching materials, autism support tools, social stories">
     
     <!-- Cookie Consent CSS -->
     <link rel="stylesheet" href="consent.css">
@@ -115,6 +115,54 @@
 
         .trust-badge strong {
             color: var(--color-primary);
+        }
+
+        /* Daily Help Finder CTA */
+        .finder-cta-section {
+            background: linear-gradient(135deg, #4a7c59, #6b9d7a);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            box-shadow: 0 4px 20px rgba(74, 124, 89, 0.3);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .finder-cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.9rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .finder-cta-section p {
+            margin-bottom: 1.8rem;
+            opacity: 0.95;
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .finder-cta-section a {
+            display: inline-block;
+            background: white;
+            color: #4a7c59;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.15rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border: 3px solid white;
+        }
+
+        .finder-cta-section a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         /* Category Filter Navigation */
@@ -454,6 +502,23 @@
             .filter-btn {
                 width: 100%;
             }
+
+            .finder-cta-section {
+                padding: 2rem 1.5rem !important;
+            }
+            
+            .finder-cta-section h2 {
+                font-size: 1.5rem !important;
+            }
+            
+            .finder-cta-section p {
+                font-size: 1rem !important;
+            }
+            
+            .finder-cta-section a {
+                padding: 1rem 2rem !important;
+                font-size: 1rem !important;
+            }
         }
     </style>
 </head>
@@ -495,29 +560,14 @@
         </div>
     </div>
 </section>
-<!-- =============================================== -->
-<!-- ADD THIS SECTION TO YOUR downloads.html       -->
-<!-- INSERT IT RIGHT AFTER THE "products-intro"    -->
-<!-- AND BEFORE THE "Category Filter" section      -->
-<!-- =============================================== -->
 
 <!-- Daily Help Finder Call-to-Action -->
-<section class="finder-cta-section" style="background: linear-gradient(135deg, #4a7c59, #6b9d7a); 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            text-align: center; 
-            margin-bottom: 3rem; 
-            color: white;
-            box-shadow: 0 4px 20px rgba(74, 124, 89, 0.3);
-            border: 3px solid rgba(255,255,255,0.2);">
-    
+<section class="finder-cta-section">
     <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
     
-    <h2 style="color: white; margin-bottom: 1rem; font-size: 1.9rem; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-        Not Sure Which Product Is Right for You?
-    </h2>
+    <h2>Not Sure Which Product Is Right for You?</h2>
     
-    <p style="margin-bottom: 1.8rem; opacity: 0.95; font-size: 1.15rem; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+    <p>
         Take our <strong>2-minute Daily Help Finder</strong> and get personalized recommendations based on your specific challenges – plus real tips from our family's experience.
     </p>
     
@@ -527,59 +577,20 @@
         <div>✓ Real family insights</div>
     </div>
     
-    <a href="daily-help-finder/index.html" 
-       style="display: inline-block; 
-              background: white; 
-              color: #4a7c59; 
-              padding: 1.2rem 3rem; 
-              border-radius: 50px; 
-              text-decoration: none; 
-              font-weight: 700;
-              font-size: 1.15rem;
-              box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-              transition: all 0.3s ease;
-              border: 3px solid white;">
+    <a href="daily-help-finder/index.html">
         Find Your Perfect Match →
     </a>
-    
-    <style>
-        .finder-cta-section a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-        
-        @media (max-width: 768px) {
-            .finder-cta-section {
-                padding: 2rem 1.5rem !important;
-            }
-            
-            .finder-cta-section h2 {
-                font-size: 1.5rem !important;
-            }
-            
-            .finder-cta-section p {
-                font-size: 1rem !important;
-            }
-            
-            .finder-cta-section a {
-                padding: 1rem 2rem !important;
-                font-size: 1rem !important;
-            }
-        }
-    </style>
 </section>
-
-<!-- =============================================== -->
-<!-- END OF FINDER SECTION                          -->
-<!-- Your Category Filter section starts here →    -->
-<!-- =============================================== -->
 
 <!-- Category Filter -->
 <section class="category-filter">
     <h3>📂 Browse by Category</h3>
     <div class="filter-buttons">
         <button class="filter-btn active" data-category="all">
-            All Products <span class="count">6</span>
+            All Products <span class="count">10</span>
+        </button>
+        <button class="filter-btn" data-category="social-stories">
+            Social Stories <span class="count">4</span>
         </button>
         <button class="filter-btn" data-category="structure">
             Daily Structure <span class="count">1</span>
@@ -591,20 +602,149 @@
             School Support <span class="count">3</span>
         </button>
         <button class="filter-btn" data-category="bundle">
-            Bundles <span class="count">2</span>
+            Bundles <span class="count">3</span>
         </button>
     </div>
 </section>
 
 <!-- Results Info -->
 <div class="results-info">
-    <p id="results-text">Showing all 6 products</p>
+    <p id="results-text">Showing all 10 products</p>
 </div>
 
 <!-- Products Grid -->
 <div class="products-grid">
 
-    <!-- PRODUCT 1: Complete Homework Emergency Bundle -->
+    <!-- PRODUCT 1: Complete Social Stories Bundle -->
+    <div class="product-card" data-categories="bundle social-stories">
+        <div class="product-image-wrapper">
+            <span class="product-badge bundle">BEST VALUE</span>
+            <img src="sozialbundle.png" alt="Complete Social Stories Bundle" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">🎁 BUNDLE · Social Stories · Autism + ADHD</span>
+            <h3 class="product-title">Complete Social Stories Bundle</h3>
+            <p class="product-description">
+                <strong>Save $3!</strong> Get all 3 Social Story collections together – complete coverage 
+                for every essential situation. 19 complete stories (250+ pages) developed by parents for parents.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>19 Complete Social Stories</strong> (250+ pages total)</li>
+                <li><strong>Collection 1:</strong> Medical & Daily Life (6 stories)</li>
+                <li><strong>Collection 2:</strong> School & Leisure (6 stories)</li>
+                <li><strong>Collection 3:</strong> Daily Life & Development (7 stories)</li>
+                <li><strong>30+ Emoji Symbols</strong> for visual support</li>
+                <li><strong>Customizable pages</strong> for personal details</li>
+                <li><strong>Bundle value: $26.97</strong> – You pay only $23.99</li>
+                <li>Every situation your child might face – all in one place</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$23.99 <small>$26.97</small></span>
+                <a href="https://paulrawe.gumroad.com/l/jadvqc" class="product-cta" target="_blank" rel="noopener">
+                    Get Bundle →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2: Social Stories Collection 3 - Daily Life & Development -->
+    <div class="product-card" data-categories="social-stories">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="1-7overview.png" alt="Social Stories: Daily Life & Development" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">📖 Social Stories · Development · Milestones</span>
+            <h3 class="product-title">7 Social Stories: Daily Life & Development</h3>
+            <p class="product-description">
+                Help your child master important developmental milestones. From learning to ride a bike 
+                to dealing with big life changes – these stories prepare children for essential life moments.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>7 complete Social Stories</strong> (90 pages)</li>
+                <li>🚴 Learning to Ride a Bike</li>
+                <li>🏠 Sleeping Over at a Friend's House</li>
+                <li>⏰ Staying Home Alone</li>
+                <li>👶 Getting a Sibling</li>
+                <li>🐕 When a Pet Gets a New Home</li>
+                <li>📦 Moving to a New Home</li>
+                <li>🎮 Learning to Lose</li>
+                <li><strong>Visual emoji system</strong> + customizable pages</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$8.99</span>
+                <a href="https://paulrawe.gumroad.com/l/kkqjzt" class="product-cta" target="_blank" rel="noopener">
+                    Download Now →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3: Social Stories Collection 2 - School & Leisure -->
+    <div class="product-card" data-categories="social-stories school">
+        <div class="product-image-wrapper">
+            <img src="product_overview_english.png" alt="Social Stories: School & Leisure" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">📖 Social Stories · School · Activities</span>
+            <h3 class="product-title">6 Social Stories: School & Leisure Activities</h3>
+            <p class="product-description">
+                Navigate school transitions and social activities with confidence. From first day of school 
+                to family celebrations – help your child understand what to expect.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>6 complete Social Stories</strong> (75 pages)</li>
+                <li>✅ First Day of School</li>
+                <li>✅ Changing Schools</li>
+                <li>✅ Taking the Train</li>
+                <li>✅ Family Celebrations & Birthdays</li>
+                <li>✅ Visiting Relatives</li>
+                <li>✅ Going to the Pool</li>
+                <li><strong>Created by teacher + parent team</strong></li>
+                <li>Field-tested in real classrooms</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$8.99</span>
+                <a href="https://paulrawe.gumroad.com/l/cewdh" class="product-cta" target="_blank" rel="noopener">
+                    Download Now →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 4: Social Stories Collection 1 - Medical & Daily Life -->
+    <div class="product-card" data-categories="social-stories">
+        <div class="product-image-wrapper">
+            <img src="5+1.png" alt="Social Stories: Medical & Daily Life" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">📖 Social Stories · Medical · Daily Routines</span>
+            <h3 class="product-title">5+1 Social Stories: Medical & Daily Life</h3>
+            <p class="product-description">
+                Transform challenging daily situations into manageable experiences. From doctor visits 
+                to shopping trips – reduce anxiety with clear, step-by-step preparation.
+            </p>
+            <ul class="product-benefits">
+                <li><strong>6 complete Social Stories</strong> (85 pages)</li>
+                <li>🦷 At the Dentist</li>
+                <li>💉 At the Doctor: Vaccination</li>
+                <li>🏥 Visiting Someone in the Hospital</li>
+                <li>✂️ At the Hairdresser</li>
+                <li>🍽️ Eating at a Restaurant</li>
+                <li>🛒 Shopping at the Supermarket</li>
+                <li><strong>+ Complete introduction & emoji legend</strong></li>
+                <li>Reduce meltdowns with predictability</li>
+            </ul>
+            <div class="product-footer">
+                <span class="product-price">$8.99</span>
+                <a href="https://paulrawe.gumroad.com/l/lsprga" class="product-cta" target="_blank" rel="noopener">
+                    Download Now →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 5: Complete Homework Emergency Bundle -->
     <div class="product-card" data-categories="bundle school">
         <div class="product-image-wrapper">
             <span class="product-badge bundle">BEST VALUE</span>
@@ -637,7 +777,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 2: Autism Homework Emergency Plan -->
+    <!-- PRODUCT 6: Autism Homework Emergency Plan -->
     <div class="product-card" data-categories="school">
         <div class="product-image-wrapper">
             <span class="product-badge new">NEW!</span>
@@ -669,7 +809,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 3: ADHD Homework Emergency Plan -->
+    <!-- PRODUCT 7: ADHD Homework Emergency Plan -->
     <div class="product-card" data-categories="school">
         <div class="product-image-wrapper">
             <span class="product-badge new">NEW!</span>
@@ -702,7 +842,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 4: Complete Autism Support System Bundle -->
+    <!-- PRODUCT 8: Complete Autism Support System Bundle -->
     <div class="product-card" data-categories="bundle structure communication">
         <div class="product-image-wrapper">
             <span class="product-badge bundle">BEST VALUE</span>
@@ -734,7 +874,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 5: Visual Daily Structure Card System -->
+    <!-- PRODUCT 9: Visual Daily Structure Card System -->
     <div class="product-card" data-categories="structure">
         <div class="product-image-wrapper">
             <img src="coverengl.png" alt="Visual Daily Structure Card System" class="product-image">
@@ -765,7 +905,7 @@
         </div>
     </div>
 
-    <!-- PRODUCT 6: Autism Visual Communication Scales Bundle -->
+    <!-- PRODUCT 10: Autism Visual Communication Scales Bundle -->
     <div class="product-card" data-categories="communication school">
         <div class="product-image-wrapper">
             <img src="skalenusa.jpg" alt="Autism Visual Communication Scales Bundle" class="product-image">
@@ -934,7 +1074,8 @@
 </div>
 
 <!-- Category Filter Script -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card');
@@ -970,4 +1111,38 @@ document.addEventListener('DOMContentLoaded', function() {
             if (category === 'all') {
                 resultsText.textContent = `Showing all ${visibleCount} products`;
             } else {
-                resultsText.textContent = `Showing $
+                const categoryName = this.textContent.trim().split(' ')[0];
+                resultsText.textContent = `Showing ${visibleCount} ${categoryName} product${visibleCount !== 1 ? 's' : ''}`;
+            }
+        });
+    });
+});
+
+// Cookie consent functions (you may need to add your actual cookie logic here)
+function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Add your cookie acceptance logic here
+}
+
+function declineCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Add your cookie decline logic here
+}
+
+function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+}
+
+function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+}
+
+function saveCookieSettings() {
+    // Add your cookie settings save logic here
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
