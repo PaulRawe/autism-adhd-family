@@ -1,6 +1,107 @@
 {
   "products": [
     {
+      "id": "social_stories_bundle",
+      "name": "Complete Social Stories Bundle",
+      "short_name": "Social Stories Bundle",
+      "price": 23.99,
+      "original_price": 26.97,
+      "savings": 3.00,
+      "description": "All 3 Social Story collections together – 19 complete stories (250+ pages) for every essential situation. Medical visits, school transitions, and life milestones.",
+      "image": "sozialbundle.png",
+      "url": "https://paulrawe.gumroad.com/l/jadvqc",
+      "tags": ["social_stories", "autism", "adhd", "preparation", "anxiety"],
+      "helps_with": [
+        "Preparing for new or stressful situations",
+        "Reducing anxiety through predictability",
+        "Understanding what to expect step-by-step",
+        "Complete coverage for all major life situations"
+      ],
+      "priority_score": {
+        "social_stories": 10,
+        "preparation": 10,
+        "anxiety": 8,
+        "autism": 8,
+        "school": 6,
+        "medical": 6,
+        "development": 6
+      },
+      "is_bundle": true,
+      "recommended_when_both": ["preparation", "anxiety"]
+    },
+    {
+      "id": "social_stories_development",
+      "name": "7 Social Stories: Daily Life & Development",
+      "short_name": "Development Stories",
+      "price": 8.99,
+      "description": "7 stories for important milestones: bike riding, sleepovers, staying alone, new sibling, pet loss, moving, learning to lose. 90 pages.",
+      "image": "1-7overview.png",
+      "url": "https://paulrawe.gumroad.com/l/kkqjzt",
+      "tags": ["social_stories", "development", "milestones", "life_skills", "autism", "adhd"],
+      "helps_with": [
+        "Major life transitions and changes",
+        "Developmental milestones (bike, sleepovers)",
+        "Big emotions (loss, disappointment)",
+        "Building independence and life skills"
+      ],
+      "priority_score": {
+        "development": 10,
+        "milestones": 10,
+        "life_skills": 8,
+        "preparation": 8,
+        "autism": 8,
+        "adhd": 6
+      }
+    },
+    {
+      "id": "social_stories_school",
+      "name": "6 Social Stories: School & Leisure Activities",
+      "short_name": "School & Leisure Stories",
+      "price": 8.99,
+      "description": "6 stories for school and social activities: first day, school change, train rides, celebrations, visiting relatives, swimming. 75 pages.",
+      "image": "product_overview_english.png",
+      "url": "https://paulrawe.gumroad.com/l/cewdh",
+      "tags": ["social_stories", "school", "transitions", "social", "autism", "adhd"],
+      "helps_with": [
+        "School transitions (first day, new school)",
+        "Social situations (parties, visiting)",
+        "Public transportation anxiety",
+        "Leisure activities and recreation"
+      ],
+      "priority_score": {
+        "school": 10,
+        "transitions": 10,
+        "social": 8,
+        "preparation": 8,
+        "autism": 8,
+        "adhd": 6
+      }
+    },
+    {
+      "id": "social_stories_medical",
+      "name": "5+1 Social Stories: Medical & Daily Life",
+      "short_name": "Medical & Daily Stories",
+      "price": 8.99,
+      "description": "6 stories for daily challenges: dentist, doctor/shots, hospital visits, haircuts, restaurants, shopping. 85 pages with emoji system.",
+      "image": "5+1.png",
+      "url": "https://paulrawe.gumroad.com/l/lsprga",
+      "tags": ["social_stories", "medical", "daily_life", "anxiety", "autism", "adhd"],
+      "helps_with": [
+        "Medical appointments (dentist, doctor)",
+        "Sensory-challenging situations (haircut)",
+        "Daily routines (shopping, restaurants)",
+        "Reducing meltdowns through preparation"
+      ],
+      "priority_score": {
+        "medical": 10,
+        "daily_life": 8,
+        "anxiety": 9,
+        "preparation": 8,
+        "autism": 8,
+        "adhd": 6
+      }
+    },
+    {
       "id": "homework_bundle",
       "name": "Complete Homework Emergency Bundle",
       "short_name": "Homework Bundle",
