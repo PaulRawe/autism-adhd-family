@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 
 # Sitemap angeben
-Sitemap: http://autismfamilyguide.com/sitemap.xml
+Sitemap: https://autismfamilyguide.com/sitemap.xml
 
 # Optional: Crawl-Verzögerung für höfliche Bots
 # User-agent: *
