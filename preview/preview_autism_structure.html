@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Structure & Routines for Autistic Students - Preview | Autism Family Guide</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free preview: Build predictable classroom routines that reduce anxiety for autistic students. Visual schedules, transition strategies, and structured learning.">
+    <meta name="keywords" content="autism classroom structure, visual schedules autism, classroom routines autism, predictability autistic students">
+    <meta name="author" content="Paul and Katharina - Autism Family Guide">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autismfamilyguide.com/preview/structure.html">
+    <meta property="og:title" content="Structure & Routines for Autistic Students - Free Preview">
+    <meta property="og:description" content="Transform classroom chaos into predictable calm. Visual structure strategies for autistic learners.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" content="https://autismfamilyguide.com/preview/structure.html">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --blue-dark: #2C5F7D;
+            --blue-light: #5A9FBD;
+            --blue-bg: #E8F4F8;
+            --beige: #faf8f5;
+            --text-dark: #2d3436;
+            --text-medium: #636e72;
+            --text-light: #95a5a6;
+            --accent: #16A085;
+            --accent-light: #48C9B0;
+            --warning-red: #e74c3c;
+            --success-green: #27AE60;
+            --cta-orange: #d97706;
+            --cta-orange-hover: #b45309;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--beige);
+            font-size: 17px;
+        }
+
+        header {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-bottom: 1px solid #e0ddd8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        header .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--blue-dark);
+        }
+
+        header .logo a {
+            color: var(--blue-dark);
+            text-decoration: none;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .preview-label {
+            background: var(--cta-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--blue-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: var(--blue-dark);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: var(--blue-light);
+            margin: 1.5rem 0 0.8rem 0;
+            font-size: 1.1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4EBF5 100%);
+            border-left: 4px solid var(--blue-dark);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box {
+            background: #fff8f0;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            border-left: 4px solid var(--warning-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--cta-orange) 0%, #ea580c 100%);
+            color: white;
+            padding: 3rem 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.3);
+        }
+
+        .cta-box h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--cta-orange);
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        .price-info {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            border-left: 4px solid var(--success-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--blue-dark);
+            margin-top: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--blue-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content {
+            border: 3px dashed var(--blue-light);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            background: #f8fbfd;
+        }
+
+        .unlock-notice {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+            color: white;
+            border-radius: 8px;
+            margin: -1rem 0 2rem 0;
+        }
+
+        .schedule-preview {
+            background: white;
+            border: 2px solid var(--blue-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            background: var(--blue-bg);
+            border-radius: 4px;
+        }
+
+        .schedule-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            margin-top: 3rem;
+            border-top: 1px solid #e0ddd8;
+        }
+
+        footer .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+
+        footer a {
+            color: var(--blue-dark);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="https://autismfamilyguide.com">autismfamilyguide.com</a></div>
+</header>
+
+<div class="hero">
+    <div class="preview-label">FREE PREVIEW</div>
+    <h1>📋 Structure & Routines</h1>
+    <p class="subtitle">Safety Through Predictability</p>
+    <div class="badge">Immediately Implementable • Visually Supported • Research-Based</div>
+</div>
+
+<div class="container">
+
+    <section>
+        <h2>Why Structure Is Non-Negotiable</h2>
+        
+        <p><strong>Unpredictability is painful for autistic brains.</strong> When the environment changes without warning, it triggers the same neurological response as physical danger.</p>
+
+        <div class="tip-box">
+            <h4>💡 What Happens Without Structure:</h4>
+            <ul>
+                <li><strong>Constant anxiety</strong> – never knowing what comes next</li>
+                <li><strong>Executive dysfunction</strong> – inability to prioritize or plan</li>
+                <li><strong>Meltdowns</strong> – sensory and emotional overload from uncertainty</li>
+                <li><strong>Learned helplessness</strong> – giving up because nothing is controllable</li>
+            </ul>
+        </div>
+
+        <p><strong>The solution?</strong> Structured, predictable routines that make the world feel safe.</p>
+    </section>
+
+    <section>
+        <h2>🎯 Preview: Visual Schedule Framework</h2>
+        
+        <p>Visual schedules transform abstract time into concrete, visible structure. Here's what effective visual support looks like:</p>
+
+        <div class="preview-content">
+            <h3>Sample Morning Arrival Routine</h3>
+            
+            <div class="schedule-preview">
+                <div class="schedule-item">
+                    <div class="schedule-icon">🚌</div>
+                    <div>
+                        <strong>Step 1: Arrive at Classroom</strong>
+                        <p>Hang backpack on hook #7 (with photo label)</p>
+                    </div>
+                </div>
+                
+                <div class="schedule-item">
+                    <div class="schedule-icon">📝</div>
+                    <div>
+                        <strong>Step 2: Check Schedule Board</strong>
+                        <p>Look at visual schedule to see today's activities</p>
+                    </div>
+                </div>
+                
+                <div class="schedule-item">
+                    <div class="schedule-icon">✏️</div>
+                    <div>
+                        <strong>Step 3: Morning Work</strong>
+                        <p>Complete worksheet in folder (already on desk)</p>
+                    </div>
+                </div>
+                
+                <div class="schedule-item">
+                    <div class="schedule-icon">🪑</div>
+                    <div>
+                        <strong>Step 4: Circle Time</strong>
+                        <p>Sit in assigned spot when music plays</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>🔑 Why This Works:</h4>
+                <ul>
+                    <li><strong>Visual + Verbal:</strong> Icons paired with text</li>
+                    <li><strong>Sequential:</strong> Clear numbered order</li>
+                    <li><strong>Specific:</strong> "Assigned spot" not "sit down"</li>
+                    <li><strong>Predictable:</strong> Same routine every single day</li>
+                </ul>
+            </div>
+
+            <div class="unlock-notice">
+                <h3>🔓 Unlock Complete Visual Schedule Templates</h3>
+                <p>The full guide includes ready-to-print schedules for arrival, dismissal, transitions, special activities, and emergency changes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>The Cost of Unpredictability</h2>
+        
+        <div class="warning-box">
+            <h4>⚠️ What Neurotypical Teachers Don't Realize:</h4>
+            <p>For autistic students, a "surprise" assembly feels like this:</p>
+            <ul>
+                <li>You planned for math → Now it's something else → <strong>Schedule betrayed you</strong></li>
+                <li>You prepared mentally for quiet work → Now it's loud chaos → <strong>Sensory assault</strong></li>
+                <li>No one warned you → You can't prepare → <strong>Loss of control</strong></li>
+                <li>Everything you expected is wrong → <strong>The world is unsafe</strong></li>
+            </ul>
+        </div>
+
+        <p><strong>The result?</strong> Shutdown, meltdown, or escape behavior. Not because the student is difficult, but because their brain is experiencing threat.</p>
+
+        <div class="example-box">
+            <h4>🎯 The Structure Solution:</h4>
+            <p><strong>Warning + Visual + Time:</strong> "Tomorrow at 10:00 AM, we have an assembly. I'll show you on your schedule. We'll sit together in the third row."</p>
+            <p><em>Result: Student can mentally prepare. Anxiety reduced. Meltdown prevented.</em></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>What's Inside the Full Guide</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h4>Daily Schedule Templates</h4>
+                <p>Printable visual schedules for every classroom routine</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h4>Transition Strategies</h4>
+                <p>How to move between activities without meltdowns</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h4>Change Management</h4>
+                <p>Protocols for schedule changes, substitutes, and disruptions</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4>Task Sequencing</h4>
+                <p>Breaking complex tasks into visual, numbered steps</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⏰</div>
+                <h4>Time Visual Supports</h4>
+                <p>Visual timers, countdown systems, and time markers</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <h4>Completion Markers</h4>
+                <p>Visual progress tracking that builds motivation</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Real Classroom Transformations</h2>
+        
+        <div class="testimonial">
+            <p>"I thought my student was 'challenging' until I implemented structured routines. The meltdowns stopped almost immediately. He just needed to know what was happening and when."</p>
+            <div class="testimonial-author">– Special Education Teacher, Florida</div>
+        </div>
+
+        <div class="testimonial">
+            <p>"Visual schedules changed everything. My autistic students arrive calmer, transition better, and actually follow multi-step directions independently. This should be standard in every classroom."</p>
+            <div class="testimonial-author">– 2nd Grade Teacher, Washington</div>
+        </div>
+    </section>
+
+    <div class="cta-box">
+        <h3>Build Predictable Classroom Routines Today</h3>
+        <p>Join teachers creating structured environments where autistic students feel safe and can learn.</p>
+        
+        <a href="[GUMROAD-LINK]" class="cta-button">Download Full Guide</a>
+        
+        <div class="price-info">
+            Instant download • Printable PDF • Lifetime access
+        </div>
+    </div>
+
+    <section>
+        <h2>Why This Approach Works</h2>
+        
+        <div class="tip-box">
+            <h4>✅ Built on neuroscience</h4>
+            <p>Structured routines align with how autistic brains process information and feel safe.</p>
+        </div>
+
+        <div class="tip-box">
+            <h4>✅ Family-tested daily</h4>
+            <p>Paul and Katharina use these exact strategies with their 7-year-old son with autism and ADHD.</p>
+        </div>
+
+        <div class="tip-box">
+            <h4>✅ Classroom-proven</h4>
+            <p>Katharina implements these routines in her elementary classroom every single day.</p>
+        </div>
+
+        <div class="tip-box">
+            <h4>✅ Zero-cost implementation</h4>
+            <p>Most strategies require only paper, markers, and consistency – no expensive materials.</p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2025 Autism Family Guide | autismfamilyguide.com</p>
+    <div class="legal">
+        <a href="https://autismfamilyguide.com/privacy.html">Privacy Policy</a> | 
+        <a href="https://autismfamilyguide.com/terms.html">Terms of Use</a> | 
+        <a href="https://autismfamilyguide.com/cookies.html">Cookie Settings</a> | 
+        <a href="https://autismfamilyguide.com/about-us.html">About Us</a> |
+        <a href="https://autismfamilyguide.com/transparency.html">Transparency & Advertising</a> | 
+        <a href="https://autismfamilyguide.com/disclaimer.html">Disclaimer</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;color:#636e72;">This website is operated from Germany and complies with EU data protection regulations (GDPR).</p>
+</footer>
+
+</body>
+</html>
