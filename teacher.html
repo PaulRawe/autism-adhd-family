@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Teacher Resources for Autism & ADHD | Evidence-Based Classroom Strategies</title>
+
+    <!-- Enhanced SEO -->
+    <meta name="description" content="Comprehensive teacher guides for ADHD and autism classroom management. Field-tested strategies by elementary teacher Katharina for real classroom success.">
+    <meta name="keywords" content="ADHD classroom management, autism teaching strategies, teacher resources ADHD, special education tools, inclusive classroom">
+    
+    <!-- Cookie Consent CSS -->
+    <link rel="stylesheet" href="consent.css">
+
+    <style>
+        /* AUTISM-FRIENDLY DESIGN */
+        :root {
+            --bg-main: #f4f6f8;
+            --bg-card: #ffffff;
+            --color-primary: #2f6f8f;
+            --color-secondary: #5fa8c9;
+            --color-text: #2b2b2b;
+            --color-muted: #6b6b6b;
+            --color-hover: #e6f1f6;
+            --color-accent: #d97706;
+            --color-success: #059669;
+            --color-trust: #10b981;
+            --color-teacher: #7c3aed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #6b21a8 100%);
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 1rem auto 0;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Teacher Trust Section */
+        .teacher-trust-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-teacher);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.1);
+        }
+
+        .teacher-trust-section h2 {
+            color: var(--color-teacher);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .teacher-trust-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .teacher-credentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .credential-badge {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #f59e0b;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .credential-badge .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-badge h3 {
+            color: var(--color-teacher);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .credential-badge p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Category Headers */
+        .category-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(47, 111, 143, 0.2);
+        }
+
+        .category-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+            border-color: var(--color-teacher);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .product-badge.new {
+            background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
+        }
+
+        .product-badge.bundle {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .product-badge.teacher-made {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: #f8f9fa;
+            border-bottom: 3px solid var(--color-teacher);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            color: var(--color-teacher);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .product-category {
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .product-description {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .preview-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .preview-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .product-benefits {
+            list-style: none;
+            margin: 1rem 0;
+            padding: 0;
+        }
+
+        .product-benefits li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .product-benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: bold;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .product-price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--color-teacher);
+        }
+
+        .product-price small {
+            font-size: 1rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 0.5rem;
+        }
+
+        .product-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-teacher) 0%, #6b21a8 100%);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .product-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+        }
+
+        .product-cta:focus {
+            outline: 3px solid var(--color-secondary);
+        }
+
+        /* Bundle Cards (No Images) */
+        .bundle-card {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 3px solid var(--color-teacher);
+        }
+
+        .bundle-card .product-content {
+            padding: 2rem;
+        }
+
+        .bundle-card .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Why Section */
+        .why-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid #bae6fd;
+        }
+
+        .why-section h2 {
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-teacher);
+        }
+
+        .why-item h3 {
+            color: var(--color-teacher);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--color-trust);
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-section h2 {
+            color: var(--color-success);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .legal {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teacher-credentials {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>👩‍🏫 Teacher Resources for ADHD & Autism</h1>
+    <p>Evidence-based classroom strategies that actually work in real school settings</p>
+    <a href="downloads.html" class="back-link">← Back to All Resources</a>
+</header>
+
+<main>
+
+<!-- Teacher Trust Section -->
+<section class="teacher-trust-section">
+    <h2>Created by Teachers, for Teachers</h2>
+    <p>
+        <strong>Every guide on this page was developed by Katharina</strong>, an elementary school teacher with years of hands-on experience teaching students with ADHD and autism in real, diverse classrooms—not specialist settings, not one-on-one, but actual 25-student classrooms where you're juggling multiple needs simultaneously.
+    </p>
+    <p>
+        These aren't academic theories or idealized strategies. These are the methods that actually work when you have limited time, limited resources, and unlimited challenges.
+    </p>
+
+    <div class="teacher-credentials">
+        <div class="credential-badge">
+            <div class="icon">📚</div>
+            <h3>Evidence-Based</h3>
+            <p>Built on current research from leading experts in ADHD and autism education</p>
+        </div>
+        <div class="credential-badge">
+            <div class="icon">✓</div>
+            <h3>Field-Tested</h3>
+            <p>Every strategy tested in real classrooms with diverse student populations</p>
+        </div>
+        <div class="credential-badge">
+            <div class="icon">👩‍🏫</div>
+            <h3>Teacher-Written</h3>
+            <p>Created by an elementary teacher who lives these challenges daily</p>
+        </div>
+        <div class="credential-badge">
+            <div class="icon">⚡</div>
+            <h3>Immediately Actionable</h3>
+            <p>Ready-to-implement strategies you can use tomorrow morning</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ADHD TEACHER GUIDES SECTION -->
+<!-- ========================================= -->
+
+<div class="category-header">
+    <h2>⚡ ADHD Teacher Guides</h2>
+    <p>Comprehensive classroom strategies for managing and teaching students with ADHD—from crisis intervention to proactive classroom design</p>
+</div>
+
+<div class="products-grid">
+
+    <!-- PRODUCT 1: ADHD-SOS -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="ADHD-SOS Common Problems & Immediate Solutions.png" alt="ADHD-SOS: Common Problems & Immediate Solutions" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">⚡ ADHD · Crisis Solutions · Quick Reference</span>
+            <h3 class="product-title">ADHD-SOS: Common Problems & Immediate Solutions</h3>
+            
+            <a href="https://autismfamilyguide.com/preview/preview_adhd_sos.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                <strong>When Max refuses to sit still. When Emma stares into space. When homework never makes it home.</strong>
+                This guide gives you immediate, practical solutions for the problems you're facing right now—not theory, just proven strategies you can implement tomorrow morning.
+            </p>
+            
+            <ul class="product-benefits">
+                <li>What to do when a child can't get started ("blank paper freeze")</li>
+                <li>Managing constant interruptions without losing your mind</li>
+                <li>Proven systems for the homework catastrophe</li>
+                <li>Movement strategies that work (not disrupt)</li>
+                <li>When to seek additional professional support</li>
+                <li>Ready-to-print quick reference cards</li>
+                <li>Emergency intervention strategies</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$7.99</span>
+                <a href="https://paulrawe.gumroad.com/l/zbmnjt" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2: ADHD Teaching Strategies -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="ADHD Teaching Strategies - Motivation & Methods.png" alt="ADHD Teaching Strategies: Motivation & Methods" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">📚 ADHD · Teaching Methods · Motivation</span>
+            <h3 class="product-title">ADHD Teaching Strategies: Motivation & Methods</h3>
+            
+            <a href="https://autismfamilyguide.com/preview/preview_adhd_teaching.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                <strong>You can't teach a student who isn't engaged. And ADHD brains don't engage the way neurotypical brains do.</strong>
+                This guide shows you exactly how to teach ADHD students in ways that actually work—methods that harness their strengths instead of fighting against their neurology.
+            </p>
+            
+            <ul class="product-benefits">
+                <li>Why traditional motivation doesn't work (and what does)</li>
+                <li>How to deliver instructions they'll actually follow</li>
+                <li>Breaking down complex tasks without oversimplifying</li>
+                <li>Using hyperfocus as a teaching tool, not a distraction</li>
+                <li>Time blindness: what it means for your classroom</li>
+                <li>Interest-based learning approaches</li>
+                <li>Evidence-based motivation strategies specific to ADHD</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$7.99</span>
+                <a href="https://paulrawe.gumroad.com/l/xqvopm" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3: ADHD Classroom Management -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="ADHD Classroom Management Toolkit.png" alt="ADHD Classroom Management Toolkit" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">🎯 ADHD · Behavior Management · Prevention</span>
+            <h3 class="product-title">ADHD Classroom Management Toolkit</h3>
+            
+            <a href="https://autismfamilyguide.com/preview/preview_adhd_management.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                <strong>Managing an ADHD student isn't the same as managing behavior.</strong>
+                Traditional behavior management assumes students can control impulses. ADHD students can't—at least not consistently. This guide gives you research-backed strategies designed specifically for ADHD challenges.
+            </p>
+            
+            <ul class="product-benefits">
+                <li>Why consequences don't work (and what does)</li>
+                <li>Proactive systems that prevent meltdowns before they happen</li>
+                <li>Managing impulsivity without constant redirection</li>
+                <li>Sensory regulation strategies</li>
+                <li>Token economy systems that actually motivate ADHD brains</li>
+                <li>De-escalation protocols for meltdowns</li>
+                <li>Visual management tools and schedules</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$7.99</span>
+                <a href="https://paulrawe.gumroad.com/l/havxz" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 4: ADHD Classroom Setup -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="ADHD in the Classroom - Setup & Seating Arrangement.png" alt="ADHD in the Classroom: Setup & Seating Arrangement" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">🏫 ADHD · Environment Design · Seating</span>
+            <h3 class="product-title">ADHD in the Classroom: Setup & Seating Arrangement</h3>
+            
+            <a href="https://autismfamilyguide.com/preview/preview_adhd_classroom_setup.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                <strong>Your classroom setup is either helping or hurting your ADHD students.</strong>
+                A perfectly positioned seat can reduce behavioral issues by 40%. This guide shows you how to design your classroom for ADHD success through environmental optimization.
+            </p>
+            
+            <ul class="product-benefits">
+                <li>The optimal seating position (and why it works)</li>
+                <li>What research actually says about proximity to teacher</li>
+                <li>Reducing visual and auditory distractions strategically</li>
+                <li>Movement zones vs. focused work zones</li>
+                <li>Sensory-friendly modifications that help everyone</li>
+                <li>Classroom layout templates for different configurations</li>
+                <li>Desk arrangement diagrams with rationale</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$7.99</span>
+                <a href="https://paulrawe.gumroad.com/l/pyfam" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT 5: Parent Conferences ADHD -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge new">NEW!</span>
+            <img src="ADHD - Guide & Templates.png" alt="Parent Conferences ADHD: Guide & Templates" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">💬 ADHD · Parent Communication · Templates</span>
+            <h3 class="product-title">Parent Conferences ADHD: Guide & Templates</h3>
+            
+            <a href="https://autismfamilyguide.com/preview/preview_adhd_conferences.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                <strong>The parent-teacher conference about their ADHD child is one of the most important conversations you'll have all year.</strong>
+                This guide shows you how to turn defensive parents into collaborative partners with proven conversation frameworks.
+            </p>
+            
+            <ul class="product-benefits">
+                <li>How to open the conversation without triggering defensiveness</li>
+                <li>Presenting challenges without blame or judgment</li>
+                <li>Discussing accommodations parents will actually support</li>
+                <li>The medication conversation (when and how to approach it)</li>
+                <li>Building sustainable home-school communication systems</li>
+                <li>Pre-conference preparation checklists</li>
+                <li>Ready-to-use documentation templates</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$7.99</span>
+                <a href="https://paulrawe.gumroad.com/l/kvnyr" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- ADHD BUNDLES SECTION -->
+<!-- ========================================= -->
+
+<div class="category-header" style="margin-top: 4rem;">
+    <h2>🎁 ADHD Teacher Bundles - Save Up to $10</h2>
+    <p>Get comprehensive ADHD support systems at discounted bundle pricing</p>
+</div>
+
+<div class="products-grid">
+
+    <!-- BUNDLE 1: Complete ADHD Teacher Toolkit -->
+    <div class="product-card bundle-card">
+        <div class="product-content">
+            <span class="product-category">🎁 COMPLETE BUNDLE · All 5 ADHD Guides</span>
+            <h3 class="product-title">Complete ADHD Teacher Toolkit</h3>
+            
+            <p class="product-description">
+                <strong>Everything you need to successfully teach and support ADHD students—in one comprehensive toolkit.</strong>
+                Teaching ADHD students requires different strategies, different classroom setups, different management approaches, and different parent communication. This complete bundle gives you all of it.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>All 5 ADHD Teacher Guides</strong> in one package</li>
+                <li>✅ ADHD-SOS: Common Problems & Immediate Solutions</li>
+                <li>✅ ADHD Teaching Strategies: Motivation & Methods</li>
+                <li>✅ ADHD Classroom Management Toolkit</li>
+                <li>✅ ADHD in the Classroom: Setup & Seating Arrangement</li>
+                <li>✅ Parent Conferences ADHD: Guide & Templates</li>
+                <li><strong>Bundle value: $39.95</strong> – You pay only $29.99</li>
+                <li><strong>Save $9.96</strong> vs. buying individually</li>
+                <li>From crisis intervention to classroom design to parent partnerships</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$29.99 <small>$39.95</small></span>
+                <a href="https://paulrawe.gumroad.com/l/fieur" class="product-cta" target="_blank" rel="noopener">
+                    Get Complete Bundle →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BUNDLE 2: Classroom Essentials Bundle -->
+    <div class="product-card bundle-card">
+        <div class="product-content">
+            <span class="product-category">🎁 ESSENTIALS BUNDLE · Setup + Management + Teaching</span>
+            <h3 class="product-title">Classroom Essentials Bundle</h3>
+            
+            <p class="product-description">
+                <strong>Build an ADHD-friendly classroom from the ground up.</strong>
+                The three foundational elements of ADHD classroom success: the right environment, the right management system, and the right teaching approach.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>3 Core ADHD Guides:</strong></li>
+                <li>✅ ADHD Classroom Management Toolkit</li>
+                <li>✅ ADHD in the Classroom: Setup & Seating Arrangement</li>
+                <li>✅ ADHD Teaching Strategies: Motivation & Methods</li>
+                <li>Environment + Management + Teaching = Success</li>
+                <li><strong>Bundle value: $23.97</strong> – You pay only $19.99</li>
+                <li><strong>Save $3.98</strong> vs. buying individually</li>
+                <li>Perfect for setting up your classroom at the start of the year</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$19.99 <small>$23.97</small></span>
+                <a href="https://paulrawe.gumroad.com/l/hkcuil" class="product-cta" target="_blank" rel="noopener">
+                    Get Essentials Bundle →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BUNDLE 3: Communication & Crisis Bundle -->
+    <div class="product-card bundle-card">
+        <div class="product-content">
+            <span class="product-category">🎁 CRISIS BUNDLE · SOS Solutions + Parent Communication</span>
+            <h3 class="product-title">Communication & Crisis Bundle</h3>
+            
+            <p class="product-description">
+                <strong>Handle the tough conversations and crisis moments with confidence.</strong>
+                Two critical skills every teacher of ADHD students needs: knowing what to do when things go wrong, and knowing how to talk with parents when they do.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>2 Essential Crisis Guides:</strong></li>
+                <li>✅ ADHD-SOS: Common Problems & Immediate Solutions</li>
+                <li>✅ Parent Conferences ADHD: Guide & Templates</li>
+                <li>Emergency solutions + Parent communication frameworks</li>
+                <li>Turn defensive parents into collaborative partners</li>
+                <li><strong>Bundle value: $15.98</strong> – You pay only $12.99</li>
+                <li><strong>Save $2.99</strong> vs. buying individually</li>
+                <li>Perfect for navigating difficult parent relationships</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$12.99 <small>$15.98</small></span>
+                <a href="https://paulrawe.gumroad.com/l/zctgff" class="product-cta" target="_blank" rel="noopener">
+                    Get Crisis Bundle →
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- AUTISM & HOMEWORK RESOURCES SECTION -->
+<!-- ========================================= -->
+
+<div class="category-header" style="margin-top: 4rem;">
+    <h2>📚 Autism & Homework Support Resources</h2>
+    <p>Comprehensive guides for homework challenges and visual communication systems for autistic students</p>
+</div>
+
+<div class="products-grid">
+
+    <!-- PRODUCT: Autism Homework Emergency Plan -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge teacher-made">TEACHER-MADE</span>
+            <img src="homework-cover.jpg" alt="Autism Homework Emergency Plan" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">📝 School Support · Homework · Crisis Management</span>
+            <h3 class="product-title">Autism Homework Emergency Plan</h3>
+            
+            <a href="preview/Autism-Homework-Emergency-Plan-Preview_EN_US.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                Transform daily homework battles into structured success. This 43-page evidence-based 
+                guide gives you concrete, immediately actionable strategies developed from current 
+                autism research and real classroom experience by teacher Katharina.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>43 pages</strong> of professional content</li>
+                <li><strong>Complete Emergency Plan:</strong> Step-by-step crisis protocols</li>
+                <li><strong>3-Phase System:</strong> Before, During, After strategies</li>
+                <li><strong>Printable Tools:</strong> Checklists, timers, emergency cards</li>
+                <li><strong>18 Scientific References:</strong> Evidence-based approach</li>
+                <li>Neurodiversity-affirming & immediately actionable</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$9.99</span>
+                <a href="https://paulrawe.gumroad.com/l/vwfbi" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT: ADHD Homework Emergency Plan -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge teacher-made">TEACHER-MADE</span>
+            <img src="adhscoverengl.png" alt="ADHD Homework Emergency Plan" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">⚡ School Support · ADHD · Executive Function</span>
+            <h3 class="product-title">ADHD Homework Emergency Plan</h3>
+            
+            <a href="preview/ADHD-Homework-Emergency-Plan-Preview_EN_US.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                End the daily homework battles tonight. This 30-page research-backed guide gives you 
+                proven strategies for when your ADHD child is melting down, shutting down, or can't 
+                get started – from neuroscience and real classroom experience by teacher Katharina.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>30 pages</strong> of evidence-based content</li>
+                <li><strong>Crisis Protocol:</strong> Emergency interventions that work NOW</li>
+                <li><strong>ADHD Brain Science:</strong> Why homework is neurologically harder</li>
+                <li><strong>De-escalation Techniques:</strong> Stop meltdowns in their tracks</li>
+                <li><strong>Prevention Strategies:</strong> Environment, routines, motivation</li>
+                <li><strong>Scientific References:</strong> Dr. Russell Barkley & leading researchers</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$9.99</span>
+                <a href="https://paulrawe.gumroad.com/l/zadjnf" class="product-cta" target="_blank" rel="noopener">
+                    Get Instant Access →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCT: Autism Visual Communication Scales Bundle -->
+    <div class="product-card">
+        <div class="product-image-wrapper">
+            <span class="product-badge teacher-made">TEACHER-MADE</span>
+            <img src="skalenusa.jpg" alt="Autism Visual Communication Scales Bundle" class="product-image">
+        </div>
+        <div class="product-content">
+            <span class="product-category">💬 Communication · Self-Regulation · School</span>
+            <h3 class="product-title">Autism Visual Communication Scales Bundle</h3>
+            
+            <a href="preview/Autism-Toolkit-Preview_EN_US.html" target="_blank" class="preview-link">
+                📖 Read Free Preview
+            </a>
+            
+            <p class="product-description">
+                Comprehensive toolkit with 6 visual scales that helps autistic children 
+                communicate their internal states without words. Developed by Katharina, 
+                field-tested in real school settings.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>72 pages</strong> of professional content (4 PDFs)</li>
+                <li><strong>6 visual scales:</strong> Energy, Sensory, Proximity, Communication, Body, Transition</li>
+                <li><strong>Emergency card system</strong> with 4 variants</li>
+                <li><strong>Print-ready & lamination-friendly</strong></li>
+                <li><strong>Includes:</strong> Handbook, Workbook, Prevention Plan + Quick Start</li>
+                <li>Autism-affirming & neurodiversity-respecting</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$29.00</span>
+                <a href="https://paulrawe.gumroad.com/l/dkgny" class="product-cta" target="_blank" rel="noopener">
+                    Download Now →
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- HOMEWORK BUNDLE -->
+<!-- ========================================= -->
+
+<div class="category-header" style="margin-top: 4rem;">
+    <h2>🎁 Homework Support Bundle</h2>
+    <p>Complete homework emergency coverage for both autism and ADHD</p>
+</div>
+
+<div class="products-grid">
+
+    <!-- BUNDLE: Complete Homework Emergency Bundle -->
+    <div class="product-card bundle-card">
+        <div class="product-content">
+            <span class="product-category">🎁 BUNDLE · Homework · Autism + ADHD</span>
+            <h3 class="product-title">Complete Homework Emergency Bundle</h3>
+            
+            <p class="product-description">
+                <strong>Save $4!</strong> Get both homework emergency plans together – complete coverage 
+                for autism AND ADHD. Perfect for co-occurring conditions or teachers supporting diverse 
+                classrooms. 73 pages of comprehensive strategies from teacher Katharina.
+            </p>
+            
+            <ul class="product-benefits">
+                <li><strong>2 Complete Guides:</strong> Autism + ADHD Homework Emergency Plans</li>
+                <li><strong>73 pages</strong> of evidence-based content (2 PDFs)</li>
+                <li><strong>Autism Guide (43 pages):</strong> Sensory, meltdowns, visual structure</li>
+                <li><strong>ADHD Guide (30 pages):</strong> Executive function, focus, motivation</li>
+                <li><strong>30+ Scientific References:</strong> Leading researchers & neuroscience</li>
+                <li><strong>All bonus materials:</strong> Emergency cards, checklists, school scripts</li>
+                <li><strong>Bundle value: $19.98</strong> – You pay only $15.99</li>
+                <li>Complete toolkit for any homework challenge</li>
+            </ul>
+            
+            <div class="product-footer">
+                <span class="product-price">$15.99 <small>$19.98</small></span>
+                <a href="https://paulrawe.gumroad.com/l/pmmxd" class="product-cta" target="_blank" rel="noopener">
+                    Get Bundle →
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Why Section -->
+<section class="why-section" style="margin-top: 4rem;">
+    <h2>Why Teachers Trust Our Resources</h2>
+    <div class="why-grid">
+        <div class="why-item">
+            <h3>📚 Evidence-Based</h3>
+            <p>Every strategy backed by current research from leading experts in ADHD and autism education.</p>
+        </div>
+        <div class="why-item">
+            <h3>✓ Field-Tested</h3>
+            <p>Tested and optimized in real classrooms with diverse student populations—not just theory.</p>
+        </div>
+        <div class="why-item">
+            <h3>👩‍🏫 Teacher-Created</h3>
+            <p>Developed by Katharina, an elementary teacher with years of hands-on classroom experience.</p>
+        </div>
+        <div class="why-item">
+            <h3>⚡ Immediately Actionable</h3>
+            <p>Ready-to-implement strategies you can use tomorrow—no lengthy preparation needed.</p>
+        </div>
+        <div class="why-item">
+            <h3>🎯 Real Classrooms</h3>
+            <p>Designed for actual 25-student classrooms, not idealized specialist settings.</p>
+        </div>
+        <div class="why-item">
+            <h3>💚 Neurodiversity-Affirming</h3>
+            <p>Approaches that respect and work with neurodivergent brains, not against them.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Guarantee Section -->
+<section class="guarantee-section">
+    <h2>✓ Our Quality Guarantee</h2>
+    <p>
+        All materials are carefully developed and tested in real classroom settings. If something doesn't meet your 
+        expectations, just contact us. We'll find a solution.
+    </p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Questions, feedback, or topic suggestions? Feel free to reach out:</p>
+    
+    <p style="text-align: center; margin-top: 2rem;">
+        <strong>Email:</strong> <a href="mailto:rawe.p@freenet.de" style="color: var(--color-accent); text-decoration: underline;">rawe.p@freenet.de</a>
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Autism & ADHD – Real Parenting Experience</p>
+    <div class="legal">
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Use</a> | 
+        <a href="cookies.html">Cookie Settings</a> | 
+        <a href="about-us.html">About Us</a> |
+        <a href="transparency.html">Transparency & Advertising</a> | 
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;color:#ccc;">
+        This website is operated from Germany and complies with EU data protection regulations (GDPR).
+    </p>
+</footer>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner">
+    <div class="banner-content">
+        <p>
+            We use cookies to analyze and improve the usage of our website. 
+            <a href="cookies.html">Learn more</a>
+        </p>
+        <div class="button-group">
+            <button class="btn-accept" onclick="acceptCookies()">Accept All</button>
+            <button class="btn-decline" onclick="declineCookies()">Essential Only</button>
+            <button class="btn-settings" onclick="openCookieSettings()">Settings</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cookie Settings</h2>
+        </div>
+        <div class="modal-body">
+            <div class="cookie-category">
+                <h3>Essential Cookies</h3>
+                <p>These cookies are required for basic website functionality.</p>
+                <div class="cookie-toggle">
+                    <label>Essential</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" checked disabled>
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Analytics Cookies</h3>
+                <p>
+                    These cookies help us understand website usage 
+                    (GoatCounter – privacy-friendly).
+                </p>
+                <div class="cookie-toggle">
+                    <label>Analytics</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cookie-category">
+                <h3>Marketing Cookies</h3>
+                <p>These cookies may be used for future advertising purposes.</p>
+                <div class="cookie-toggle">
+                    <label>Marketing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="toggle-slider"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-cancel" onclick="closeCookieSettings()">Cancel</button>
+            <button class="btn-save" onclick="saveCookieSettings()">Save</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Cookie consent functions
+function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Add your cookie acceptance logic here
+}
+
+function declineCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    // Add your cookie decline logic here
+}
+
+function openCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'flex';
+}
+
+function closeCookieSettings() {
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+}
+
+function saveCookieSettings() {
+    // Add your cookie settings save logic here
+    document.getElementById('cookie-settings-modal').style.display = 'none';
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
