@@ -433,165 +433,53 @@
         console.log('GoatCounter Analytics removed');
     }
 
-    // Initialize Floating Download Button
+// Initialize Floating Download Button - DUAL VERSION
     function initFloatingButton() {
-        // Check if button already exists
-        if (document.getElementById('floating-download-btn')) {
-            return;
-        }
-        
-        // Create floating button
-        const button = document.createElement('a');
-        button.id = 'floating-download-btn';
-       button.href = '/download.html';
-        button.innerHTML = '📚 Resources & Downloads';
-        
-        // Add styles
-        button.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
-            color: #ffffff;
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(47, 111, 143, 0.4);
-            z-index: 999;
-            transition: all 0.3s ease;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            animation: float-in 0.5s ease-out;
+        if (document.getElementById('sticky-download-button')) return;
+
+        const depth = (window.location.pathname.match(/\//g) || []).length - 1;
+        const pathToDownloads = depth > 0 ? '../'.repeat(depth) + 'download.html' : 'download.html';
+
+        const buttonHTML = `
+        <div id="sticky-download-button">
+            <a href="${pathToDownloads}" class="sticky-btn primary" aria-label="Resources & Downloads">
+                <span class="sticky-btn-icon">📚</span>
+                <span class="sticky-btn-text">
+                    <strong>Downloads</strong>
+                    <small>All Resources</small>
+                </span>
+            </a>
+            <a href="https://www.etsy.com/shop/NeuroTeacherTools"
+               class="sticky-btn etsy"
+               target="_blank"
+               rel="noopener"
+               aria-label="Shop on Etsy">
+                <span class="sticky-btn-icon">🛍️</span>
+                <span class="sticky-btn-text">
+                    <strong>Etsy Shop</strong>
+                    <small>Buy Securely</small>
+                </span>
+            </a>
+        </div>
         `;
-        
-        // Add hover effect
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-            this.style.boxShadow = '0 6px 20px rgba(47, 111, 143, 0.5)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 15px rgba(47, 111, 143, 0.4)';
-        });
-        
-        // Add animation keyframes
-        if (!document.getElementById('floating-btn-styles')) {
-            const style = document.createElement('style');
-            style.id = 'floating-btn-styles';
-            style.textContent = `
-                @keyframes float-in {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-                @media (max-width: 768px) {
-                    #floating-download-btn {
-                        bottom: 15px !important;
-                        right: 15px !important;
-                        padding: 0.8rem 1.2rem !important;
-                        font-size: 0.85rem !important;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
+
+        const container = document.createElement('div');
+        container.innerHTML = buttonHTML.trim();
+        document.body.appendChild(container.firstElementChild);
+
+        const banner = document.getElementById('cookie-banner');
+        if (banner) {
+            updateBannerClass();
+            new MutationObserver(updateBannerClass)
+                .observe(banner, { attributes: true, attributeFilter: ['style'] });
         }
-        
-        // Append to body
-        document.body.appendChild(button);
-    }
 
-    // Reset consent (for development/testing)
-    window.resetCookieConsent = function() {
-        console.log('Resetting cookie consent'); // Debug log
-        try {
-            removeItem(COOKIE_CONSENT_KEY);
-            removeItem(COOKIE_SETTINGS_KEY);
-            console.log('Consent reset, reloading page');
-            location.reload();
-        } catch (e) {
-            console.error('Failed to reset consent:', e);
-        }
-    };
-
-    // Debug function to check current state
-    window.debugCookieConsent = function() {
-        console.log('=== Cookie Consent Debug Info ===');
-        console.log('localStorage available:', useLocalStorage);
-        console.log('Consent status:', getItem(COOKIE_CONSENT_KEY));
-        console.log('Settings:', getItem(COOKIE_SETTINGS_KEY));
-        console.log('All cookies:', document.cookie);
-        if (useLocalStorage) {
-            console.log('localStorage consent:', localStorage.getItem(COOKIE_CONSENT_KEY));
-            console.log('localStorage settings:', localStorage.getItem(COOKIE_SETTINGS_KEY));
-        }
-        console.log('================================');
-    };
-
-    // Initialize on page load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCookieBanner);
-    } else {
-        initCookieBanner();
-    }
-
-    console.log('Cookie consent script initialized');
-    console.log('Using localStorage:', useLocalStorage);
-
-})();
-
-// Helper function: Manual event tracking with GoatCounter
-window.trackEvent = function(eventName, eventData = {}) {
-    try {
-        const settings = JSON.parse(getItem('cookieSettings') || '{}');
-        
-        if (!settings.analytics || !window.goatcounter) {
-            console.log('Analytics disabled or not loaded');
-            return;
-        }
-        
-        window.goatcounter.count({
-            path: eventName,
-            title: eventData.title || eventName,
-            event: true
-        });
-    } catch (e) {
-        console.error('Event tracking failed:', e);
-    }
-};
-
-// Make getItem available globally for trackEvent
-function getItem(key) {
-    try {
-        if (typeof localStorage !== 'undefined') {
-            return localStorage.getItem(key);
-        }
-    } catch (e) {
-        // Fallback to cookie
-    }
-    
-    const nameEQ = key + '=';
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) {
-            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        function updateBannerClass() {
+            const b = document.getElementById('cookie-banner');
+            document.body.classList.toggle('cookie-banner-visible',
+                b && b.style.display !== 'none');
         }
     }
-    return null;
-}
-document.querySelectorAll('.ad-container').forEach(el => el.style.display = 'none');
 // ==================================================
 // FUNNEL LINK BOX – VARIANTE 1: Nach Navigation
 // ==================================================
