@@ -174,7 +174,7 @@
             const saved = getItem(COOKIE_SETTINGS_KEY);
             if (saved) {
                 const parsed = JSON.parse(saved);
-                console.log('Retrieved settings:', parsed); // Debug log
+                console.log('Retrieved settings:', parsed);
                 return parsed;
             }
             return defaultSettings;
@@ -203,9 +203,9 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'block';
-            console.log('Banner shown'); // Debug log
+            console.log('Banner shown');
         } else {
-            console.warn('Cookie banner element not found'); // Debug log
+            console.warn('Cookie banner element not found');
         }
     }
 
@@ -214,7 +214,7 @@
         const banner = document.getElementById('cookie-banner');
         if (banner) {
             banner.style.display = 'none';
-            console.log('Banner hidden'); // Debug log
+            console.log('Banner hidden');
         }
     }
 
@@ -398,13 +398,13 @@
         const settings = getSettings();
         
         if (!settings.analytics) {
-            console.log('Analytics disabled in settings'); // Debug log
+            console.log('Analytics disabled in settings');
             return;
         }
         
         // Check if GoatCounter is already loaded
         if (window.goatcounter || document.querySelector('script[data-goatcounter]')) {
-            console.log('GoatCounter already loaded'); // Debug log
+            console.log('GoatCounter already loaded');
             return;
         }
         
@@ -421,11 +421,9 @@
 
     // Remove analytics
     function removeAnalytics() {
-        // Remove GoatCounter script if present
         const scripts = document.querySelectorAll('script[data-goatcounter]');
         scripts.forEach(script => script.remove());
         
-        // Remove GoatCounter object
         if (window.goatcounter) {
             delete window.goatcounter;
         }
@@ -433,7 +431,9 @@
         console.log('GoatCounter Analytics removed');
     }
 
-// Initialize Floating Download Button - DUAL VERSION
+    // ==================================================
+    // STICKY DOWNLOAD BUTTON - DUAL VERSION
+    // ==================================================
     function initFloatingButton() {
         if (document.getElementById('sticky-download-button')) return;
 
@@ -480,79 +480,96 @@
                 b && b.style.display !== 'none');
         }
     }
-// ==================================================
-// FUNNEL LINK BOX – VARIANTE 1: Nach Navigation
-// ==================================================
-// EMPFOHLEN: Am stabilsten, weil <nav> immer da ist
-// ==================================================
-/*
-(function() {
-    'use strict';
 
-    function insertFunnelLink() {
-        // Check if already present
-        if (document.getElementById('help-box-guidance')) return;
+    // Reset consent (for development/testing)
+    window.resetCookieConsent = function() {
+        console.log('Resetting cookie consent');
+        try {
+            removeItem(COOKIE_CONSENT_KEY);
+            removeItem(COOKIE_SETTINGS_KEY);
+            console.log('Consent reset, reloading page');
+            location.reload();
+        } catch (e) {
+            console.error('Failed to reset consent:', e);
+        }
+    };
 
-        // Find navigation
-        const nav = document.querySelector('nav');
-        if (!nav) {
-            console.log('Navigation not found, cannot insert funnel link');
+    // Debug function to check current state
+    window.debugCookieConsent = function() {
+        console.log('=== Cookie Consent Debug Info ===');
+        console.log('localStorage available:', useLocalStorage);
+        console.log('Consent status:', getItem(COOKIE_CONSENT_KEY));
+        console.log('Settings:', getItem(COOKIE_SETTINGS_KEY));
+        console.log('All cookies:', document.cookie);
+        if (useLocalStorage) {
+            console.log('localStorage consent:', localStorage.getItem(COOKIE_CONSENT_KEY));
+            console.log('localStorage settings:', localStorage.getItem(COOKIE_SETTINGS_KEY));
+        }
+        console.log('================================');
+    };
+
+    // Initialize on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCookieBanner);
+    } else {
+        initCookieBanner();
+    }
+
+    console.log('Cookie consent script initialized');
+    console.log('Using localStorage:', useLocalStorage);
+
+})();
+
+// ==================================================
+// Helper function: Manual event tracking with GoatCounter
+// ==================================================
+window.trackEvent = function(eventName, eventData = {}) {
+    try {
+        const settings = JSON.parse(getItem('cookieSettings') || '{}');
+        
+        if (!settings.analytics || !window.goatcounter) {
+            console.log('Analytics disabled or not loaded');
             return;
         }
-
-        // Calculate relative path based on current URL
-        const currentPath = window.location.pathname;
-        const depth = (currentPath.match(/\//g) || []).length - 1;
         
-        let relativePathToFinder = '';
-        if (depth === 0) {
-            relativePathToFinder = 'daily-help-finder/index.html';
-        } else {
-            relativePathToFinder = '../'.repeat(depth) + 'daily-help-finder/index.html';
+        window.goatcounter.count({
+            path: eventName,
+            title: eventData.title || eventName,
+            event: true
+        });
+    } catch (e) {
+        console.error('Event tracking failed:', e);
+    }
+};
+
+// Make getItem available globally for trackEvent
+function getItem(key) {
+    try {
+        if (typeof localStorage !== 'undefined') {
+            return localStorage.getItem(key);
         }
-
-        // Box HTML with calculated relative path
-        const boxHTML = `
-            <div id="help-box-guidance" style="
-                max-width: 900px;
-                margin: 1rem auto;
-                padding: 0.8rem 1rem;
-                background: #f4f6f8;
-                border-left: 4px solid #2f6f8f;
-                border-radius: 6px;
-                font-size: 0.95rem;
-                line-height: 1.5;
-                color: #2b2b2b;
-            ">
-                💡 Need guidance right now?
-                <a href="${relativePathToFinder}"
-                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
-                    → Quick questions, direct help (2 min)
-                </a>
-            </div>
-        `;
-
-        // Insert box directly AFTER navigation
-        nav.insertAdjacentHTML('afterend', boxHTML);
-        console.log('✅ Funnel link box inserted after navigation');
+    } catch (e) {
+        // Fallback to cookie
     }
-
-    // Load after DOM Ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', insertFunnelLink);
-    } else {
-        insertFunnelLink();
+    
+    const nameEQ = key + '=';
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) {
+            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+        }
     }
-})();
-*/
+    return null;
+}
+
+// Hide ad containers
+document.querySelectorAll('.ad-container').forEach(el => el.style.display = 'none');
 
 // ==================================================
-// FUNNEL LINK BOX – VARIANTE 2: Am Anfang von <main>
+// FUNNEL LINK BOX – Am Anfang von <main>
 // ==================================================
-// Erscheint ganz oben im Hauptinhalt
-// ==================================================
-
-
 (function() {
     'use strict';
 
@@ -595,7 +612,6 @@
             </div>
         `;
 
-        // Insert at the BEGINNING of main
         main.insertAdjacentHTML('afterbegin', boxHTML);
         console.log('✅ Funnel link box inserted at start of main');
     }
@@ -606,67 +622,3 @@
         insertFunnelLink();
     }
 })();
-
-
-
-// ==================================================
-// FUNNEL LINK BOX – VARIANTE 3: Vor erster <section>
-// ==================================================
-// Erscheint direkt vor dem ersten Inhaltsblock
-// ==================================================
-
-/*
-(function() {
-    'use strict';
-
-    function insertFunnelLink() {
-        if (document.getElementById('help-box-guidance')) return;
-
-        const firstSection = document.querySelector('main section');
-        if (!firstSection) {
-            console.log('No section found in main');
-            return;
-        }
-
-        const currentPath = window.location.pathname;
-        const depth = (currentPath.match(/\//g) || []).length - 1;
-        
-        let relativePathToFinder = '';
-        if (depth === 0) {
-            relativePathToFinder = 'daily-help-finder/index.html';
-        } else {
-            relativePathToFinder = '../'.repeat(depth) + 'daily-help-finder/index.html';
-        }
-
-        const boxHTML = `
-            <div id="help-box-guidance" style="
-                max-width: 900px;
-                margin: 0 auto 1rem auto;
-                padding: 0.8rem 1rem;
-                background: #f4f6f8;
-                border-left: 4px solid #2f6f8f;
-                border-radius: 6px;
-                font-size: 0.95rem;
-                line-height: 1.5;
-                color: #2b2b2b;
-            ">
-                💡 Need guidance right now?
-                <a href="${relativePathToFinder}"
-                    style="color:#2f6f8f;font-weight:bold;text-decoration:underline;">
-                    → Quick questions, direct help (2 min)
-                </a>
-            </div>
-        `;
-
-        // Insert BEFORE first section
-        firstSection.insertAdjacentHTML('beforebegin', boxHTML);
-        console.log('✅ Funnel link box inserted before first section');
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', insertFunnelLink);
-    } else {
-        insertFunnelLink();
-    }
-})();
-*/
