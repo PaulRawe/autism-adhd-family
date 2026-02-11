@@ -277,4 +277,203 @@
     .modal-footer button {
         width: 100%;
     }
+    }
+/* ============================================ */
+/* STICKY BUTTON - DUAL VERSION */
+/* ============================================ */
+
+#sticky-download-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9998;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sticky-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(47, 111, 143, 0.4);
+    transition: all 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #ffffff;
+    color: #ffffff;
+}
+
+.sticky-btn.primary {
+    background: linear-gradient(135deg, #2f6f8f 0%, #5fa8c9 100%);
+}
+
+.sticky-btn.primary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #1e4d68 0%, #2f6f8f 100%);
+}
+
+.sticky-btn.etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+    animation: pulse-etsy 3s ease-in-out infinite;
+}
+
+.sticky-btn.etsy:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.5);
+}
+
+@keyframes pulse-etsy {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.sticky-btn-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.sticky-btn-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.3;
+}
+
+.sticky-btn-text strong {
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+}
+
+.sticky-btn-text small {
+    font-size: 0.7rem;
+    opacity: 0.95;
+    display: block;
+}
+
+/* ETSY BADGE */
+.etsy-badge {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    animation: glow-etsy 2s ease-in-out infinite;
+    border-color: #F56400 !important;
+}
+
+@keyframes glow-etsy {
+    0%, 100% { box-shadow: 0 0 10px rgba(245, 100, 0, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(245, 100, 0, 0.6); }
+}
+
+/* ETSY INFO BOX */
+.etsy-info-box {
+    background: linear-gradient(135deg, #FFF4E6 0%, #FFE8CC 100%);
+    border: 3px solid #F56400;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto 3rem;
+    max-width: 1100px;
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.2);
+}
+
+.etsy-info-box h3 {
+    color: #D84A00;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.etsy-info-box p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #92400e;
+}
+
+.etsy-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.etsy-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #92400e;
+}
+
+.etsy-shop-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(245, 100, 0, 0.4);
+}
+
+.etsy-shop-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 100, 0, 0.5);
+}
+
+.etsy-cta-wrapper {
+    text-align: center;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #sticky-download-button {
+        bottom: 0.8rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.4rem;
+    }
+
+    .sticky-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.5rem 0.4rem;
+        gap: 0.3rem;
+        flex-direction: column;
+        text-align: center;
+        border-width: 2px;
+    }
+
+    .sticky-btn-icon { font-size: 1.2rem; }
+    .sticky-btn-text strong { font-size: 0.65rem; }
+    .sticky-btn-text small { display: none; }
+
+    .etsy-info-box { padding: 1.5rem; }
+    .etsy-info-box h3 { font-size: 1.4rem; }
+    .etsy-benefits { grid-template-columns: 1fr; }
+}
+
+body.cookie-banner-visible #sticky-download-button {
+    bottom: 120px;
+}
+
+@media (max-width: 768px) {
+    body.cookie-banner-visible #sticky-download-button {
+        bottom: 220px;
+    }
+}
+
+/* ADS AUSBLENDEN */
+.ad-container,
+ins.adsbygoogle,
+.adsbygoogle {
+    display: none !important;
+}
 }
