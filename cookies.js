@@ -622,3 +622,30 @@ document.querySelectorAll('.ad-container').forEach(el => el.style.display = 'non
         insertFunnelLink();
     }
 })();
+// ==================================================
+// FOOTER KOLLISION - Button weich nach oben schieben
+// ==================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const sticky = document.getElementById("sticky-download-button");
+    const footer = document.querySelector("footer");
+    if (!sticky || !footer) return;
+
+    const margin = 8; // px Abstand
+
+    function updatePosition() {
+        const footerRect = footer.getBoundingClientRect();
+        
+        if (footerRect.top < window.innerHeight) {
+            // Footer sichtbar → Button nach oben schieben
+            const overlap = window.innerHeight - footerRect.top;
+            sticky.style.bottom = (overlap + margin) + 'px';
+        } else {
+            // Normal → unten fixieren
+            sticky.style.bottom = margin + 'px';
+        }
+    }
+
+    window.addEventListener("scroll", updatePosition, { passive: true });
+    window.addEventListener("resize", updatePosition, { passive: true });
+    updatePosition();
+});
