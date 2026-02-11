@@ -251,7 +251,7 @@
     background-color: #d1d5db;
 }
 
-/* Responsive Design */
+/* Responsive Design - Cookie Banner */
 @media (max-width: 768px) {
     #cookie-banner {
         padding: 1rem;
@@ -277,7 +277,8 @@
     .modal-footer button {
         width: 100%;
     }
-    }
+}
+
 /* ============================================ */
 /* STICKY BUTTON - DUAL VERSION */
 /* ============================================ */
@@ -430,10 +431,12 @@
     text-align: center;
 }
 
-/* MOBILE */
+/* MOBILE - Sticky Button */
 @media (max-width: 768px) {
     #sticky-download-button {
-        bottom: 0.8rem;
+        position: fixed !important;
+        bottom: 0.5rem !important;
+        top: auto !important;
         right: 0.5rem;
         left: 0.5rem;
         flex-direction: row;
@@ -460,6 +463,7 @@
     .etsy-benefits { grid-template-columns: 1fr; }
 }
 
+/* Cookie Banner sichtbar → Button nach oben */
 body.cookie-banner-visible #sticky-download-button {
     bottom: 120px;
 }
@@ -475,5 +479,4 @@ body.cookie-banner-visible #sticky-download-button {
 ins.adsbygoogle,
 .adsbygoogle {
     display: none !important;
-}
 }
