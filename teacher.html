@@ -421,6 +421,39 @@
             color: #cccccc;
         }
 
+
+        /* ===== DUAL BUY BUTTONS (Gumroad + Etsy) ===== */
+        .buy-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            width: 100%;
+        }
+        .btn-sub {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 400;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .product-cta.etsy {
+            background: linear-gradient(135deg, #F56400 0%, #D84A00 100%);
+            box-shadow: 0 4px 15px rgba(245, 100, 0, 0.3);
+        }
+        .product-cta.etsy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(245, 100, 0, 0.5);
+        }
+        /* Adjust footer layout for dual buttons */
+        .product-footer {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        .product-footer .product-cta {
+            width: 100%;
+            text-align: center;
+        }
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.6rem;
@@ -531,9 +564,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/zbmnjt" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455642771/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -569,9 +609,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/xqvopm" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455644707/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -607,9 +654,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/havxz" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455646631/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -645,9 +699,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/pyfam" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455656628/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -683,9 +744,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/kvnyr" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455650369/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -728,9 +796,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$29.99 <small>$39.95</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/fieur" class="product-cta" target="_blank" rel="noopener">
-                    Get Complete Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455996893/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -759,9 +834,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$19.99 <small>$23.97</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/hkcuil" class="product-cta" target="_blank" rel="noopener">
-                    Get Essentials Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455998469/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -790,9 +872,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$12.99 <small>$15.98</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/zctgff" class="product-cta" target="_blank" rel="noopener">
-                    Get Crisis Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456008540/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -841,9 +930,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/utanj" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455654113/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -879,9 +975,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/frqoeq" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455663740/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -917,9 +1020,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/mrorfa" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455665450/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -955,9 +1065,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/ywiovl" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455666944/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -993,9 +1110,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$7.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/oecrfx" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4455668566/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1038,9 +1162,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$29.99 <small>$39.95</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/tpxwqb" class="product-cta" target="_blank" rel="noopener">
-                    Get Complete Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456009576/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1069,9 +1200,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$12.99 <small>$15.98</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/julsu" class="product-cta" target="_blank" rel="noopener">
-                    Get Crisis Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456010512/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1100,9 +1238,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$19.99 <small>$23.97</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/bmiuze" class="product-cta" target="_blank" rel="noopener">
-                    Get Essentials Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456011332/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1151,9 +1296,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$9.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/vwfbi" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456009329/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1189,9 +1341,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$9.99</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/zadjnf" class="product-cta" target="_blank" rel="noopener">
-                    Get Instant Access →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456010085/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1227,9 +1386,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$29.00</span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/dkgny" class="product-cta" target="_blank" rel="noopener">
-                    Download Now →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456014013/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1272,9 +1438,16 @@
             
             <div class="product-footer">
                 <span class="product-price">$15.99 <small>$19.98</small></span>
+                <div class="buy-buttons">
                 <a href="https://paulrawe.gumroad.com/l/pmmxd" class="product-cta" target="_blank" rel="noopener">
-                    Get Bundle →
+                    ⬇️ Instant Download
+                    <span class="btn-sub">no account needed · Gumroad</span>
                 </a>
+                <a href="https://www.etsy.com/listing/4456010985/" class="product-cta etsy" target="_blank" rel="noopener">
+                    🛍️ Buy on Etsy
+                    <span class="btn-sub">buyer protection · Etsy</span>
+                </a>
+            </div>
             </div>
         </div>
     </div>
@@ -1377,100 +1550,7 @@
     </p>
 </footer>
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-banner">
-    <div class="banner-content">
-        <p>
-            We use cookies to analyze and improve the usage of our website. 
-            <a href="cookies.html">Learn more</a>
-        </p>
-        <div class="button-group">
-            <button class="btn-accept" onclick="acceptCookies()">Accept All</button>
-            <button class="btn-decline" onclick="declineCookies()">Essential Only</button>
-            <button class="btn-settings" onclick="openCookieSettings()">Settings</button>
-        </div>
-    </div>
-</div>
-
-<!-- Cookie Settings Modal -->
-<div id="cookie-settings-modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Cookie Settings</h2>
-        </div>
-        <div class="modal-body">
-            <div class="cookie-category">
-                <h3>Essential Cookies</h3>
-                <p>These cookies are required for basic website functionality.</p>
-                <div class="cookie-toggle">
-                    <label>Essential</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" checked disabled>
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cookie-category">
-                <h3>Analytics Cookies</h3>
-                <p>
-                    These cookies help us understand website usage 
-                    (GoatCounter – privacy-friendly).
-                </p>
-                <div class="cookie-toggle">
-                    <label>Analytics</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="cookie-analytics">
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="cookie-category">
-                <h3>Marketing Cookies</h3>
-                <p>These cookies may be used for future advertising purposes.</p>
-                <div class="cookie-toggle">
-                    <label>Marketing</label>
-                    <div class="toggle-switch">
-                        <input type="checkbox" id="cookie-marketing">
-                        <span class="toggle-slider"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn-cancel" onclick="closeCookieSettings()">Cancel</button>
-            <button class="btn-save" onclick="saveCookieSettings()">Save</button>
-        </div>
-    </div>
-</div>
-
-<script>
-// Cookie consent functions
-function acceptCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Add your cookie acceptance logic here
-}
-
-function declineCookies() {
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Add your cookie decline logic here
-}
-
-function openCookieSettings() {
-    document.getElementById('cookie-settings-modal').style.display = 'flex';
-}
-
-function closeCookieSettings() {
-    document.getElementById('cookie-settings-modal').style.display = 'none';
-}
-
-function saveCookieSettings() {
-    // Add your cookie settings save logic here
-    document.getElementById('cookie-settings-modal').style.display = 'none';
-    document.getElementById('cookie-banner').style.display = 'none';
-}
-</script>
+<script src="cookies.js"></script>
 
 </body>
 </html>
