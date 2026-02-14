@@ -318,7 +318,15 @@
             color: var(--blue-dark);
             text-decoration: underline;
         }
-
+/* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -463,11 +471,20 @@
         </div>
     </section>
 
-    <div class="cta-box">
+<div class="cta-box">
         <h3>Get the Complete Guide Now</h3>
         <p>Join hundreds of teachers creating sensory-friendly classrooms where autistic students thrive.</p>
         
-        <a href="https://paulrawe.gumroad.com/l/utanj" class="cta-button">Download Full Guide</a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/utanj" class="cta-btn">
+                ⬇️ Instant Download
+                <span class="btn-sub">no account needed · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/listing/4455661060/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+                🛍️ Buy on Etsy
+                <span class="btn-sub">buyer protection · Etsy</span>
+            </a>
+        </div>
         
         <div class="price-info">
             Instant download • Printable PDF • Lifetime access
