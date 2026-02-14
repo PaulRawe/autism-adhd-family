@@ -136,6 +136,15 @@ a:hover { color:#4a6f5f; text-decoration:underline; }
 .footer p { margin:8px 0; font-size:14px; }
 .footer a { color:var(--accent-light); }
 .footer a:hover { color:var(--accent); }
+  /* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
 @media (max-width:768px) {
   .page-header { padding:30px 15px 25px; }
   .section { padding:30px 15px; }
@@ -411,7 +420,16 @@ and better understand what I need.</p>
 <h2>Ready to Get Started?</h2>
 <div class="product-price">$29 USD</div>
 <p>Complete toolkit • Instant download • All scales included</p>
-<a href="https://paulrawe.gumroad.com/l/dkgny" class="cta-button">Get Complete Bundle →</a>
+<div class="buy-buttons">
+    <a href="https://paulrawe.gumroad.com/l/dkgny" class="cta-btn">
+        ⬇️ Instant Download
+        <span class="btn-sub">no account needed · Gumroad</span>
+    </a>
+    <a href="https://www.etsy.com/listing/4456014013/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+        🛍️ Buy on Etsy
+        <span class="btn-sub">buyer protection · Etsy</span>
+    </a>
+</div>
 <p class="price-note">72 total pages • Lifetime access • Print-friendly format</p>
 </div>
 
