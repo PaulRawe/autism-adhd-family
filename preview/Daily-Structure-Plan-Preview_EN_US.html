@@ -431,7 +431,15 @@
     color: var(--accent-light);
     text-decoration: none;
   }
-
+/* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
   /* ─── RESPONSIVE ─── */
   @media (max-width: 600px) {
     .theme-header, .theme-body, .theme-image-wrap {
@@ -633,7 +641,16 @@
   <h3>Get the Complete Visual Structure Plan</h3>
   <p>Instant download • Printable PDF • Lifetime access</p>
   <div class="price">$24.99</div>
-  <a href="https://paulrawe.gumroad.com/l/pvtevi" class="cta-btn">Buy Now</a>
+  <div class="buy-buttons">
+    <a href="https://paulrawe.gumroad.com/l/pvtevi" class="cta-btn">
+        ⬇️ Instant Download
+        <span class="btn-sub">no account needed · Gumroad</span>
+    </a>
+    <a href="https://www.etsy.com/listing/4456013023/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+        🛍️ Buy on Etsy
+        <span class="btn-sub">buyer protection · Etsy</span>
+    </a>
+  </div>
 </div>
 
 <!-- ═══ FOOTER ═══ -->
