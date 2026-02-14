@@ -353,6 +353,15 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* === DUAL BUY BUTTONS === */
+.buy-buttons { display: flex; flex-direction: column; gap: 0.8rem; align-items: center; }
+.btn-sub { display: block; font-size: 0.72rem; font-weight: 400; opacity: 0.85; margin-top: 3px; }
+.cta-btn-etsy {
+    background: linear-gradient(135deg, #F56400 0%, #D84A00 100%) !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(245,100,0,0.3) !important;
+}
+.cta-btn-etsy:hover { box-shadow: 0 12px 32px rgba(245,100,0,0.4) !important; }
     </style>
 </head>
 <body>
@@ -511,11 +520,20 @@
         </div>
     </section>
 
-    <div class="cta-box">
+<div class="cta-box">
         <h3>Transform Your Classroom Environment Today</h3>
         <p>Join teachers creating ADHD-friendly classrooms where focus and success become possible.</p>
         
-        <a href="https://paulrawe.gumroad.com/l/pyfam" class="cta-button">Download Full Guide</a>
+        <div class="buy-buttons">
+            <a href="https://paulrawe.gumroad.com/l/pyfam" class="cta-btn">
+                ⬇️ Instant Download
+                <span class="btn-sub">no account needed · Gumroad</span>
+            </a>
+            <a href="https://www.etsy.com/listing/4455659702/" class="cta-btn cta-btn-etsy" target="_blank" rel="noopener">
+                🛍️ Buy on Etsy
+                <span class="btn-sub">buyer protection · Etsy</span>
+            </a>
+        </div>
         
         <div class="price-info">
             Instant download • Printable PDF • Lifetime access
