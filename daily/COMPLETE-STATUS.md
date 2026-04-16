@@ -71,7 +71,7 @@ Every page now has:
 
 ### 8. **screen-time.html** ✅ COMPLETE
 - Father's perspective vs. educational standards
-- High media time but Sam is happy
+- High media time but Finn is happy
 - Audiobooks during meals
 - Regulation function of media
 - Honest about conflicting views
@@ -157,7 +157,7 @@ All pages are production-ready and can be uploaded directly to your website.
 ## 💡 Additional Notes
 
 - All medication names kept in original (Medikinet, Risperdal)
-- Names kept: Sam, Johanna, Katharina, Paul
+- Names kept: Finn, Lena, Elisabeth, Paul
 - Specific times maintained (6:30 AM, 2:30 PM, 5:00 PM)
 - German terms explained in context (Klappplan = folding plan)
 - Tone balances honesty with hope
