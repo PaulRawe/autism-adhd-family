@@ -1,0 +1,83 @@
+name: Etsy-Abgleich (geloeschte Produkte entfernen)
+
+# Laeuft automatisch, sobald ein neuer Etsy-CSV-Export unter
+#   _etsy/etsy-listings.csv
+# hochgeladen wird. Was es nicht mehr im Shop gibt, fliegt raus:
+#   - Produktseiten (Leseproben / Previews) werden geloescht
+#   - Produktkarten auf allen Seiten werden entfernt (samt Gumroad-Knopf)
+#   - leere Zwischenueberschriften, Sprunglinks, Sitemap-Eintraege und
+#     nicht mehr verwendete Bilder verschwinden mit
+# Einstellungen: etsy-abgleich.json   Bericht: _etsy/etsy-abgleich-bericht.md
+#
+# Von Hand: Reiter "Actions" -> diesen Eintrag -> "Run workflow".
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_etsy/etsy-listings.csv'
+      - 'etsy-abgleich.json'
+      - 'scripts/etsy_aufraeumen.py'
+      - '.github/workflows/etsy-abgleich.yml'
+  workflow_dispatch:
+    inputs:
+      nur_pruefen:
+        description: 'Nur pruefen: zeigt, was entfernt wuerde, aendert nichts'
+        type: boolean
+        default: false
+      erzwingen:
+        description: 'Sicherheitsbremse aus (wenn wirklich mehr als 50 % geloescht wurden)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: etsy-abgleich
+  cancel-in-progress: false
+
+jobs:
+  abgleich:
+    runs-on: ubuntu-latest
+    if: "github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, 'Etsy-Abgleich automatisch')"
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Geloeschte Etsy-Produkte entfernen
+        run: |
+          python3 scripts/etsy_aufraeumen.py \
+            ${{ inputs.nur_pruefen && '--nur-pruefen' || '' }} \
+            ${{ inputs.erzwingen && '--erzwingen' || '' }}
+          if [ -f _etsy/etsy-abgleich-bericht.md ]; then
+            cat _etsy/etsy-abgleich-bericht.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Aenderungen speichern
+        if: ${{ !inputs.nur_pruefen }}
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Keine Aenderungen - nichts zu speichern."
+            exit 0
+          fi
+          git commit -m "Etsy-Abgleich automatisch: geloeschte Produkte entfernt"
+          for versuch in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Gespeichert (Versuch ${versuch})."
+              exit 0
+            fi
+            git pull --rebase origin main || exit 1
+            sleep 3
+          done
+          echo "Push nach fuenf Versuchen nicht moeglich."
+          exit 1
