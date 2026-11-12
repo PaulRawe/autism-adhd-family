@@ -1,0 +1,30 @@
+{
+ "hinweis": "Einstellungen fuer scripts/etsy_aufraeumen.py (Etsy-Abgleich).",
+ "csv": "_etsy/etsy-listings.csv",
+ "zuordnung": "_etsy/etsy-zuordnung.json",
+ "bericht": "_etsy/etsy-abgleich-bericht.md",
+ "produktseiten_ordner": [
+  "preview"
+ ],
+ "karten_klassen": [
+  "product",
+  "product-compact",
+  "product-card"
+ ],
+ "ueberspringen": [
+  ".git",
+  "node_modules",
+  ".github",
+  "_etsy"
+ ],
+ "abschnitt_ueberschriften": [
+  "category-header"
+ ],
+ "raster_klassen": [
+  "products-grid"
+ ],
+ "eigene_domains": [
+  "autismfamilyguide.com",
+  "www.autismfamilyguide.com"
+ ]
+}
